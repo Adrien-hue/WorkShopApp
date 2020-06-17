@@ -7,22 +7,23 @@
     tools:context=".MainActivity">
 
 
-
     <RelativeLayout
         android:id="@+id/layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <!--METTRE TOUT LE MENU ICI OU AUTRE POUR ETRE AU DESSUS DE LA LISTE
+        android:layout_height="wrap_content"
+        android:background="@color/colorNoirGris">
+
+        <!--METTRE TOUT LE MENU ICI OU AUTRE POUR ETRE AU DESSUS DE LA LISTE
                                 en dessous de ça -->
 
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="75dp"
+            android:layout_width="160dp"
+            android:layout_height="144dp"
             android:layout_alignTop="@id/text"
-            android:layout_marginTop="-31dp"
-            android:padding="5dp"
-            android:src="@drawable/img_1" />
+            android:layout_marginTop="-55dp"
+            android:src="@drawable/logo_filmamora" />
+
 
         <TextView
             android:id="@+id/text"
@@ -31,21 +32,24 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="150dp"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="34dp"
             android:layout_marginBottom="5dp"
             android:text="@string/titreDuSite"
-            android:textSize="20sp" />
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ListView
             android:id="@+id/ListFilm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text"
-            android:layout_marginTop="41dp" />
+            android:layout_marginTop="50dp"
+            android:background="@color/colorWhite"
+            app:fontFamily="sans-serif-black" />
 
 
     </RelativeLayout>
-
 
 
 </LinearLayout>
