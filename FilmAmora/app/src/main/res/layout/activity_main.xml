@@ -6,16 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TESTTEST">
 
-    </TextView>
 
-    <ListView
-        android:id="@+id/ListFilm"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content">
+    <!--METTRE TOUT LE MENU ICI OU AUTRE POUR ETRE AU DESSUS DE LA LISTE
+                                en dessous de ça -->
+
+
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TESTTEST A SUPP"
+            android:layout_marginBottom="50dp">
+        </TextView>
+
+        <ListView
+            android:id="@+id/ListFilm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text"></ListView>
+
+
+    </RelativeLayout>
+
+
 
 </LinearLayout>

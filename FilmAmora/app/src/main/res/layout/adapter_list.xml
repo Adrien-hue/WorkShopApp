@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
     >
 
     <RelativeLayout
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        >
+        android:layout_margin="10dp">
 
         <TextView
             android:id="@+id/item_name"
@@ -21,24 +21,29 @@
             android:id="@+id/item_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/filmInfo"
             android:layout_below="@+id/item_name"
-            ></TextView>
+            android:text="@string/filmInfo"></TextView>
 
         <TextView
             android:id="@+id/item_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/filmInfo"
             android:layout_below="@+id/item_info"
-            ></TextView>
+            android:text="@string/filmInfo"></TextView>
 
         <ImageView
             android:id="@+id/item_icon"
 
-            android:layout_marginLeft="250dp"
             android:layout_width="30pt"
             android:layout_height="30pt"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="304dp"
+            android:layout_marginLeft="304dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginRight="-2dp"
             android:src="@drawable/img_1"></ImageView>
 
     </RelativeLayout>
