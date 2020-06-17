@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        >
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filmName"></TextView>
+
+        <TextView
+            android:id="@+id/item_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filmInfo"
+            android:layout_below="@+id/item_name"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filmInfo"
+            android:layout_below="@+id/item_info"
+            ></TextView>
+
+        <ImageView
+            android:id="@+id/item_icon"
+
+            android:layout_marginLeft="250dp"
+            android:layout_width="30pt"
+            android:layout_height="30pt"
+            android:src="@drawable/img_1"></ImageView>
+
+    </RelativeLayout>
+
+</LinearLayout>

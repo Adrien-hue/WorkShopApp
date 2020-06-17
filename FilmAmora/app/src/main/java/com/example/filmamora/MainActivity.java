@@ -6,30 +6,44 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.filmamora.Adapter.film_adapter;
+import com.example.filmamora.Objet.Film;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private TextView helloWorld;
-    private Button btn2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.helloWorld = (TextView) findViewById(R.id.helloWorld);
-        this.btn2 = (Button) findViewById(R.id.btn2);
+        //List des items
+        List<Film> listFilm = new ArrayList<Film>();
+        listFilm.add(new Film("Ready Player One", 1, "Par Steven Spielberg" ,"Le 26 mars 2018"));
+        listFilm.add(new Film("interstellar", 2,"Par Christopher Nolan" ,"Le 5 novembre 2014"));
+        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", "Le 26 juillet 2017"));listFilm.add(new Film("Ready Player One", 1, "Par Steven Spielberg" ,"Le 26 mars 2018"));
+        listFilm.add(new Film("interstellar", 2,"Par Christopher Nolan" ,"Le 5 novembre 2014"));
+        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", "Le 26 juillet 2017"));listFilm.add(new Film("Ready Player One", 1, "Par Steven Spielberg" ,"Le 26 mars 2018"));
+        listFilm.add(new Film("interstellar", 2,"Par Christopher Nolan" ,"Le 5 novembre 2014"));
+        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", "Le 26 juillet 2017"));listFilm.add(new Film("Ready Player One", 1, "Par Steven Spielberg" ,"Le 26 mars 2018"));
+        listFilm.add(new Film("interstellar", 2,"Par Christopher Nolan" ,"Le 5 novembre 2014"));
+        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", "Le 26 juillet 2017"));listFilm.add(new Film("Ready Player One", 1, "Par Steven Spielberg" ,"Le 26 mars 2018"));
+        listFilm.add(new Film("interstellar", 2,"Par Christopher Nolan" ,"Le 5 novembre 2014"));
+        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", "Le 26 juillet 2017"));listFilm.add(new Film("Ready Player One", 1, "Par Steven Spielberg" ,"Le 26 mars 2018"));
+        listFilm.add(new Film("interstellar", 2,"Par Christopher Nolan" ,"Le 5 novembre 2014"));
+        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", "Le 26 juillet 2017"));
 
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent nextPage = new Intent(getApplicationContext(), Page2.class);
-                startActivity(nextPage);
-                finish();
-            }
-        });
+
+        ListView listView = findViewById(R.id.ListFilm);
+        listView.setAdapter(new film_adapter(this, listFilm));
 
 
 
