@@ -9,6 +9,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     <!--METTRE TOUT LE MENU ICI OU AUTRE POUR ETRE AU DESSUS DE LA LISTE
@@ -16,19 +17,30 @@
 
 
 
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:src="@drawable/img_1"
+            android:layout_alignTop="@id/text"
+            android:padding="5px" />
+
         <TextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TESTTEST A SUPP"
-            android:layout_marginBottom="50dp">
-        </TextView>
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="FilmAmora"
+            android:layout_marginLeft="150dp"
+            android:textSize="20dp" />
 
         <ListView
             android:id="@+id/ListFilm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text"></ListView>
+            android:layout_below="@+id/text"
+            android:layout_marginTop="100dp" />
+
 
 
     </RelativeLayout>
