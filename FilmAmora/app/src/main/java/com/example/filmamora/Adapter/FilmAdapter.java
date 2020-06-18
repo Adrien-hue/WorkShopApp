@@ -15,7 +15,7 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class film_adapter extends BaseAdapter {
+public class FilmAdapter extends BaseAdapter {
 
     //Fields
 
@@ -24,7 +24,7 @@ public class film_adapter extends BaseAdapter {
     private LayoutInflater inflater;
 
     //Constructeur
-    public film_adapter(Context context, List<Film> filmList) {
+    public FilmAdapter(Context context, List<Film> filmList) {
         this.context = context;
         this.filmList = filmList;
         this.inflater = LayoutInflater.from(context);

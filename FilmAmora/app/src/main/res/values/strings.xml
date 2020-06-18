@@ -2,4 +2,5 @@
     <string name="app_name">FilmAmora</string>
     <string name="filmName">item_name</string>
     <string name="filmInfo">film_info</string>
+    <string name="titreDuSite">Bienvenue sur FilmAmora</string>
 </resources>
