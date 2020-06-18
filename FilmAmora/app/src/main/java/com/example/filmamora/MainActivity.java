@@ -2,25 +2,31 @@ package com.example.filmamora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.Objet.Film;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private TextView filmName;
+    private TextView filmInfo;
+    private TextView filmDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.filmDate = (TextView) findViewById(R.id.item_date);
+        this.filmInfo = findViewById(R.id.item_info);
+        this.filmName = findViewById(R.id.item_name);
 
         //List des items
         List <Film> listFilm = new ArrayList<Film>();
@@ -44,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", "Le 26 juillet 2017"));
 
 
-        ListView listView = findViewById(R.id.ListFilm);
 
+        ListView listView = findViewById(R.id.ListFilm);
 
         // permet de trier la liste des films
         //Collections.sort(listFilm, Collections.reverseOrder((Comparator<Object>) listFilm));
