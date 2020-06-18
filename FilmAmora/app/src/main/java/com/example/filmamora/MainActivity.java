@@ -45,10 +45,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         ListView listView = findViewById(R.id.ListFilm);
+
+
         // permet de trier la liste des films
-        Collections.sort(listFilm, Collections.reverseOrder((Comparator<Object>) listFilm));
+        //Collections.sort(listFilm, Collections.reverseOrder((Comparator<Object>) listFilm));
 
         listView.setAdapter(new FilmAdapter(this, listFilm));
+
 
 
 

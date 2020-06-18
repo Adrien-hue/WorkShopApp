@@ -45,8 +45,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/text"
             android:layout_marginTop="50dp"
-            android:background="@color/colorWhite"
+            android:background="@color/colorNoirGris"
             app:fontFamily="sans-serif-black" />
+
+       
+
+
 
 
     </RelativeLayout>
