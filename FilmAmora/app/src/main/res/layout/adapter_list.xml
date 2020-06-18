@@ -21,6 +21,7 @@
             android:layout_marginTop="30dp"
             android:text="@string/filmName"
             android:fontFamily="@font/courgette"
+            android:textSize="15dp"
             android:textColor="@color/colorWhite"/>
 
 
@@ -30,6 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_name"
             android:text="@string/filmInfo"
+            android:fontFamily="@font/sriracha"
+            android:textSize="12dp"
             android:textColor="@color/colorWhite"/>
 
 
@@ -37,9 +40,10 @@
             android:id="@+id/item_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:fontFamily="@font/sriracha"
             android:layout_below="@+id/item_info"
             android:text="@string/filmInfo"
+            android:textSize="12dp"
             android:textColor="@color/colorWhite"/>
 
 
