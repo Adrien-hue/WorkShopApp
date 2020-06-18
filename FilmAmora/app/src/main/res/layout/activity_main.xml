@@ -37,7 +37,8 @@
             android:text="@string/titreDuSite"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/sriracha"/>
 
         <ListView
             android:id="@+id/ListFilm"
@@ -45,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/text"
             android:layout_marginTop="50dp"
-            android:background="@color/colorNoirGris"
+            android:background="@color/colorPurple"
             app:fontFamily="sans-serif-black" />
 
        
