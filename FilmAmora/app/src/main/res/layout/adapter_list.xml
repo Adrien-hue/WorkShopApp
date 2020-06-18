@@ -15,21 +15,29 @@
             android:id="@+id/item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/filmName" />
+            android:text="@string/filmName"
+            android:textColor="@color/colorWhite"/>
+
 
         <TextView
             android:id="@+id/item_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_name"
-            android:text="@string/filmInfo" />
+
+            android:text="@string/filmInfo"
+            android:textColor="@color/colorWhite"/>
+
 
         <TextView
             android:id="@+id/item_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_info"
-            android:text="@string/filmInfo" />
+
+            android:text="@string/filmInfo"
+            android:textColor="@color/colorWhite"/>
+
 
         <ImageView
             android:id="@+id/item_icon"
