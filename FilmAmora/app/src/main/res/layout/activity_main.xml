@@ -28,7 +28,14 @@
             android:id="@+id/ListFilm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< Updated upstream
             android:layout_below="@+id/text"></ListView>
+=======
+            android:layout_below="@+id/text"
+            android:layout_marginTop="50dp"
+            android:background="@color/colorNoirGris"
+            app:fontFamily="sans-serif-black" />
+>>>>>>> Stashed changes
 
 
     </RelativeLayout>
