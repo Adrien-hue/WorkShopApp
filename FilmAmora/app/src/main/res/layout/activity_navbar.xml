@@ -4,23 +4,27 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/navbar"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:layout_marginBottom="30dp">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10sp">
+        android:padding="5sp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/les_films"
+        
         android:linksClickable="false"
         android:layout_weight="1"
         android:textColor="@color/colorWhite"
+        android:clickable="true"
         android:fontFamily="@font/sriracha"
         android:textAlignment="center"
+        android:background="@color/colorPrimaryDark"
         android:gravity="center_horizontal" />
     <TextView
         android:layout_width="wrap_content"
