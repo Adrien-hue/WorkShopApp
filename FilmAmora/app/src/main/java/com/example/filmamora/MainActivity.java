@@ -11,9 +11,7 @@ import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.Objet.Film;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.filmDate = findViewById(R.id.item_date);
+        this.filmDate = (TextView) findViewById(R.id.item_date);
         this.filmInfo = findViewById(R.id.item_info);
         this.filmName = findViewById(R.id.item_name);
 
@@ -54,10 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         ListView listView = findViewById(R.id.ListFilm);
-
-        Typeface Courgette =Typeface.createFromAsset(getAssets(),"fonts/Courgette-Regular.ttf");
-        filmName.setTypeface(Courgette);
-
 
         // permet de trier la liste des films
         //Collections.sort(listFilm, Collections.reverseOrder((Comparator<Object>) listFilm));
