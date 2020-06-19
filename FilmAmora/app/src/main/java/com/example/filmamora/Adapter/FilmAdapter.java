@@ -11,8 +11,6 @@ import android.widget.TextView;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.R;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class FilmAdapter extends BaseAdapter {
@@ -52,7 +50,7 @@ public class FilmAdapter extends BaseAdapter {
 
         Film currentItem = (Film) getItem(i);
         String itemName = currentItem.getName();
-        String itemDate = currentItem.getDate();
+        Long itemDate = currentItem.getDate();
         String itemInfo = currentItem.getInfo();
         int id = currentItem.getId();
 
@@ -61,6 +59,7 @@ public class FilmAdapter extends BaseAdapter {
 
         ImageView itemImageView = view.findViewById(R.id.item_icon);
         String ressourceName = "item_" + id;
+
         int resId = context.getResources().getIdentifier(ressourceName, "drawable", context.getPackageName());
         itemImageView.setImageResource(resId);
 
@@ -68,8 +67,13 @@ public class FilmAdapter extends BaseAdapter {
         itemInfoView.setText(itemInfo);
 
         TextView itemDateView = view.findViewById(R.id.item_date);
-        itemDateView.setText(itemDate);
+        itemDateView.setText("Sorti en " + itemDate);
 
         return view;
+    }
+
+    public void update(List<Film> filmList){
+        this.filmList = filmList;
+        this.notifyDataSetChanged();
     }
 }
