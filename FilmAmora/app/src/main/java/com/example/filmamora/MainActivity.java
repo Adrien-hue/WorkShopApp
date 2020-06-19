@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(new FilmAdapter(this, listFilm));
 
     }
-    public ArrayList triAnnee(ArrayList listFilm){
+   /* public ArrayList triAnnee(ArrayList listFilm){
         int taille = listFilm.size();
         int i, j, min;
         for(i =1; i<taille; i++){
@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 min = f2.getId();
                 do{
                     listFilm.get(j) = listFilm.get(j-1);
-                }while(j>0 && min<listFilm.get(j-1);
+                }while(j>0 && min<listFilm.get(j-1));
                 listFilm(j) = min;
             }
         }
         return listFilm;
-    }
+    }*/
 }

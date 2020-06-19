@@ -27,7 +27,7 @@
             android:id="@+id/logo"
             android:layout_width="160dp"
             android:layout_height="125dp"
-            android:src="@drawable/logo_FilmAmora" />
+            android:src="@drawable/logo_filmamora" />
 
 
         <TextView
@@ -62,7 +62,7 @@
             android:layout_weight="1"
             android:layout_height="30dp"
             android:layout_marginRight="10dp"
-            android:onClick="trierParTitre"
+
             android:background="@color/colorLightPurple"
             android:textColor="@color/colorWhite"
             android:text="Trier par Titre" />
@@ -71,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_weight="1"
-            android:onClick="trierParAnnee"
+
             android:background="@color/colorLightPurple"
             android:textColor="@color/colorWhite"
             android:text="Trier par Année" />
