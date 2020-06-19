@@ -67,7 +67,7 @@ public class FilmAdapter extends BaseAdapter {
         itemInfoView.setText(itemInfo);
 
         TextView itemDateView = view.findViewById(R.id.item_date);
-        itemDateView.setText("Sortie le " + itemDate);
+        itemDateView.setText("Sortie en " + itemDate);
 
         return view;
     }
