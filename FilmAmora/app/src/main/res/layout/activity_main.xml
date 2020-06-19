@@ -27,7 +27,7 @@
             android:id="@+id/logo"
             android:layout_width="160dp"
             android:layout_height="125dp"
-            android:src="@drawable/logo_filmamora" />
+            android:src="@drawable/logo_FilmAmora" />
 
 
         <TextView
