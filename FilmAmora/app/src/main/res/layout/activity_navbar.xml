@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/navbar"
+    android:gravity="center_horizontal"
+    android:layout_marginBottom="30dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5sp"
+        android:layout_marginLeft="10sp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/les_films"
+        android:linksClickable="true"
+        android:layout_weight="1"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="@font/sriracha"
+        android:textAlignment="center"
+        android:background="@drawable/border"
+        android:gravity="center_horizontal"
+        android:layout_marginRight="2dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/realisateur"
+        android:linksClickable="true"
+        android:layout_weight="1"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="@font/sriracha"
+        android:textAlignment="center"
+        android:background="@drawable/border"
+        android:gravity="center_horizontal"
+        android:layout_marginRight="2dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fontFamily="@font/sriracha"
+        android:linksClickable="false"
+        android:text="@string/film_a_voir"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/border"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_marginRight="2dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notes_film"
+        android:linksClickable="false"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/border"
+        android:fontFamily="@font/sriracha"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -7,32 +7,63 @@
     tools:context=".MainActivity">
 
 
-
     <RelativeLayout
+        android:id="@+id/layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <!--METTRE TOUT LE MENU ICI OU AUTRE POUR ETRE AU DESSUS DE LA LISTE
+        android:layout_height="wrap_content"
+        android:background="@color/colorNoirGris">
+
+        <!--METTRE TOUT LE MENU ICI OU AUTRE POUR ETRE AU DESSUS DE LA LISTE
                                 en dessous de ça -->
 
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="144dp"
+            android:layout_alignTop="@id/text"
+            android:layout_marginTop="-55dp"
+            android:src="@drawable/logo_filmamora" />
 
 
         <TextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TESTTEST A SUPP"
-            android:layout_marginBottom="50dp">
-        </TextView>
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/titreDuSite"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/sriracha"/>
+
+        <include
+            layout="@layout/activity_navbar"
+            android:layout_below="@+id/text"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent">
+        </include>
+
+
 
         <ListView
             android:id="@+id/ListFilm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text"></ListView>
+            android:layout_below="@+id/text"
+            android:layout_marginTop="50dp"
+            android:background="@color/colorPurple"
+            app:fontFamily="sans-serif-black" />
+
+       
+
+
 
 
     </RelativeLayout>
-
 
 
 </LinearLayout>
