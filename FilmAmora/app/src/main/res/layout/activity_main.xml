@@ -48,19 +48,14 @@
         </include>
 
 
-
         <ListView
             android:id="@+id/ListFilm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="55dp"
             android:background="@color/colorPurple"
             app:fontFamily="sans-serif-black" />
-
-       
-
-
 
 
     </RelativeLayout>
