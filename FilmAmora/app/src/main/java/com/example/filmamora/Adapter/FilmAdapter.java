@@ -50,7 +50,7 @@ public class FilmAdapter extends BaseAdapter {
 
         Film currentItem = (Film) getItem(i);
         String itemName = currentItem.getName();
-        int itemDate = currentItem.getDate();
+        Long itemDate = currentItem.getDate();
         String itemInfo = currentItem.getInfo();
         int id = currentItem.getId();
 
@@ -70,5 +70,10 @@ public class FilmAdapter extends BaseAdapter {
         itemDateView.setText("Sorti en " + itemDate);
 
         return view;
+    }
+
+    public void update(List<Film> filmList){
+        this.filmList = filmList;
+        this.notifyDataSetChanged();
     }
 }
