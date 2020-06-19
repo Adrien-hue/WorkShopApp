@@ -2,10 +2,8 @@ package com.example.filmamora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -66,13 +64,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
-
-    public void openDetails(View view) {
-        Intent openDetails = new Intent(getApplicationContext(), Details.class);
-        startActivity(openDetails);
-        String test = FilmAdapter.class.getName();
-        openDetails.putExtra("name", test);
-        finish();
     }
 }
