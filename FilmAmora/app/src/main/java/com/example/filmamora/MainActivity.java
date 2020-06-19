@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
 import com.example.filmamora.Objet.Film;
@@ -38,33 +41,43 @@ public class MainActivity extends AppCompatActivity {
         listFilm.add(new Film("Her",5,"Par Spike Jonze", 2013));
 
 
-        ListView listView = findViewById(R.id.ListFilm);
+        final ListView listView = findViewById(R.id.ListFilm);
 
         listView.setAdapter(new FilmAdapter(this, listFilm));
 
 
+
+        //Item clickable ======================================================================================
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                if(position == 0){
+                long film = listView.getItemIdAtPosition(position);
+                Log.d("mainActivity", ""+ film);
+
+                if(film == 1){
                     Intent rdy = new Intent(getApplicationContext(), ReadyPlayerOne.class);
                     startActivity(rdy);
 
-                }else if(position == 1){
+                }else if(film == 2){
 
 
-                }else if(position == 2){
+                }else if(film == 2){
 
-                }else if(position == 3){
+                }else if(film == 3){
 
-                }else if(position == 4){
+                }else if(film == 4){
 
-                }else if(position == 5){
+                }else if(film == 5){
 
                 }
             }
         });
 
+    }
+
+    public void goToReal(View view) {
+        Intent goToReal = new Intent(getApplicationContext(), ListRealisateur.class);
+        startActivity(goToReal);
     }
 }
