@@ -1,14 +1,14 @@
 package com.example.filmamora.Objet;
 
 
-public class Film {
+public class Film implements Comparable<Film>{
 
-    private String name;
+    private final String name;
     private String info;
-    private int date;
+    private final Long date;
     private int id;
 
-    public Film(String name, int id, String info, int date){
+    public Film(String name, int id, String info, Long date){
         this.name = name;
         this.info = info;
         this.date = date;
@@ -17,9 +17,14 @@ public class Film {
 
     public String getName() { return name; }
 
-    public int getDate() { return date; }
+    public Long getDate() { return date; }
 
     public int getId(){ return id; }
 
     public String getInfo(){ return info; }
+
+    @Override
+    public int compareTo(Film f) {
+        return date.compareTo(f.date);
+    }
 }

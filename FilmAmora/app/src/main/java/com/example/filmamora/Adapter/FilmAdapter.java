@@ -50,7 +50,7 @@ public class FilmAdapter extends BaseAdapter {
 
         Film currentItem = (Film) getItem(i);
         String itemName = currentItem.getName();
-        int itemDate = currentItem.getDate();
+        Long itemDate = currentItem.getDate();
         String itemInfo = currentItem.getInfo();
         int id = currentItem.getId();
 
