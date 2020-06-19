@@ -1,13 +1,15 @@
 package com.example.filmamora.Objet;
 
+import java.util.Date;
+
 public class Film {
 
-    public String name;
-    public String info;
-    public String date;
-    public int id;
+    private String name;
+    private String info;
+    private int date;
+    private int id;
 
-    public Film(String name, int id, String info, String date){
+    public Film(String name, int id, String info, int date){
         this.name = name;
         this.info = info;
         this.date = date;
@@ -16,7 +18,7 @@ public class Film {
 
     public String getName() { return name; }
 
-    public String getDate() { return date; }
+    public int getDate() { return date; }
 
     public int getId(){ return id; }
 
