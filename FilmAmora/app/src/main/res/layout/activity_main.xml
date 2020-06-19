@@ -89,5 +89,4 @@
                 app:fontFamily="sans-serif-black" />
         </LinearLayout>
     </RelativeLayout>
-
-
+</LinearLayout>
