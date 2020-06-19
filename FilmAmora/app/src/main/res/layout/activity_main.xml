@@ -62,7 +62,6 @@
             android:layout_weight="1"
             android:layout_height="30dp"
             android:layout_marginRight="10dp"
-
             android:background="@color/colorLightPurple"
             android:textColor="@color/colorWhite"
             android:text="Trier par Titre" />
@@ -71,11 +70,11 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_weight="1"
-
             android:background="@color/colorLightPurple"
             android:textColor="@color/colorWhite"
             android:text="Trier par Année" />
     </LinearLayout>
+
         </LinearLayout>
     <LinearLayout
         android:id="@+id/layout_list"
@@ -89,9 +88,6 @@
             android:background="@color/colorPurple"
             app:fontFamily="sans-serif-black" />
     </LinearLayout>
-
-
-
     </RelativeLayout>
 
 
