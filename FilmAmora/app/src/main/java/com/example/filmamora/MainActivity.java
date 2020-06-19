@@ -54,28 +54,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public ArrayList triAnnee(ArrayList listFilm){
-        int taille = listFilm.size();
-        int i=0, j=0, min=0;
-        for(i =1; i<taille; i++){
-            Film f1 = (Film) listFilm.get(i);
-            Film f2 = (Film) listFilm.get(i-1);
-            //Film f3 = (Film) listFilm.get(j-1);
-            if(f1.getDate() < f2.getDate()){
-                j = i;
-                min = f2.getId();
-                Film f3 = (Film) listFilm.get(j-1);
-                do{
-                    //listFilm.get(j) = listFilm.get(j-1);
-                    Collections.swap(listFilm, j, j-1);
-                    j--;
-                }while(j>0 && min < f3.getDate());
-                //listFilm.get(j) = min;
-                Collections.swap(listFilm, j, min);
-            }
-        }
-        return listFilm;
-    }
-
-
 }
