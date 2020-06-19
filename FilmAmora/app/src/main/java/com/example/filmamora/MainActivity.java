@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
         this.filmName = findViewById(R.id.item_name);
 
         //List des items
-        ArrayList <Film> listFilm = new ArrayList<Film>();
-        listFilm.add(new Film("Ready Player One", 1, "Par Steven Spielberg" ,2018));
-        listFilm.add(new Film("Interstellar", 2,"Par Christopher Nolan" ,2014));
-        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", 2017));
-        listFilm.add(new Film("Matrix",4,"Par les Wachowski", 1999));
-        listFilm.add(new Film("Her",5,"Par Spike Jonze", 2013));
+        ArrayList<Film> listFilm = new ArrayList<Film>();
+        listFilm.add(new Film("Ready Player One", 1, "Par Steven Spielberg", 2018));
+        listFilm.add(new Film("Interstellar", 2, "Par Christopher Nolan", 2014));
+        listFilm.add(new Film("Valérian et la cité des mille planètes", 3, "Par Luc Besson", 2017));
+        listFilm.add(new Film("Matrix", 4, "Par les Wachowski", 1999));
+        listFilm.add(new Film("Her", 5, "Par Spike Jonze", 2013));
 
         ListView listView = findViewById(R.id.ListFilm);
 
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(new FilmAdapter(this, listFilm));
 
     }
-    public ArrayList triAnnee(ArrayList listFilm){
+   /* public ArrayList triAnnee(ArrayList listFilm){
         int taille = listFilm.size();
         int i, j, min;
         for(i =1; i<taille; i++){
@@ -64,4 +64,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return listFilm;
     }
+    */
 }
