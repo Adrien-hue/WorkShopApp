@@ -2,19 +2,12 @@ package com.example.filmamora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.Objet.Film;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
         listFilm.add(new Film("Her", 5, "Par Spike Jonze", 2013));
 
         ListView listView = findViewById(R.id.ListFilm);
-
-        // permet de trier la liste des films
-        //Collections.sort(listFilm, Collections.reverseOrder((Comparator<Object>) listFilm));
 
         listView.setAdapter(new FilmAdapter(this, listFilm));
 

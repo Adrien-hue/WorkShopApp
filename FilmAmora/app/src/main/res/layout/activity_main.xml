@@ -74,6 +74,7 @@
             android:textColor="@color/colorWhite"
             android:text="Trier par Année" />
     </LinearLayout>
+
         </LinearLayout>
     <LinearLayout
         android:id="@+id/layout_list"
@@ -87,9 +88,6 @@
             android:background="@color/colorPurple"
             app:fontFamily="sans-serif-black" />
     </LinearLayout>
-
-
-
     </RelativeLayout>
 
 
