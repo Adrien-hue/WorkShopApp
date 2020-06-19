@@ -71,4 +71,9 @@ public class FilmAdapter extends BaseAdapter {
 
         return view;
     }
+
+    public void update(List<Film> filmList){
+        this.filmList = filmList;
+        this.notifyDataSetChanged();
+    }
 }
