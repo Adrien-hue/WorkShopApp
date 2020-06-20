@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
+import com.example.filmamora.DetailsFilm.Valerian;
 import com.example.filmamora.ListRealisateur;
 import com.example.filmamora.MainActivity;
 import com.example.filmamora.Objet.Film;
@@ -76,7 +77,7 @@ public class LucBesson extends AppCompatActivity {
 
                 switch ((int) film){
                     case 3:
-                        Intent rdy = new Intent(getApplicationContext(), ReadyPlayerOne.class);
+                        Intent rdy = new Intent(getApplicationContext(), Valerian.class);
                         startActivity(rdy);
                         finish();
                         break;
