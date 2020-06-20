@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
+import com.example.filmamora.DetailsFilm.Valerian;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.Objet.FilmComparator;
 import com.example.filmamora.Objet.ProprieteFilm;
@@ -99,6 +100,10 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(Steven);
                         finish();
                         break;
+                    case 3:
+                        Intent valerian = new Intent(getApplicationContext(), Valerian.class);
+                        startActivity(valerian);
+                        finish();
                     default:
                         break;
             }
