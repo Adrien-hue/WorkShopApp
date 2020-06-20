@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/item_1"></ImageView>
+                android:src="@drawable/item_2"></ImageView>
 
             <TextView
                 android:layout_marginTop="20dp"
