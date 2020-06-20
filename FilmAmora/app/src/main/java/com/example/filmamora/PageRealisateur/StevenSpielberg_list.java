@@ -1,34 +1,28 @@
-package com.example.filmamora;
+package com.example.filmamora.PageRealisateur;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.Objet.FilmComparator;
 import com.example.filmamora.Objet.ProprieteFilm;
+import com.example.filmamora.R;
 
-import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class MainActivity extends AppCompatActivity {
+public class StevenSpielberg_list extends AppCompatActivity {
 
     private ArrayList<Film> listFilm;
     private TextView filmName;
@@ -41,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_steven_spielberg_list);
+
 
         this.filmDate = (TextView) findViewById(R.id.item_date);
         this.filmInfo = findViewById(R.id.item_info);
@@ -49,14 +44,10 @@ public class MainActivity extends AppCompatActivity {
         this.triAnnee = findViewById(R.id.btnTri2);
         this.triTitre = findViewById(R.id.btnTri1);
 
+
         //List des items
         this.listFilm = new ArrayList<Film>();
-        listFilm.add(new Film("Interstellar", 1, "Par Christopher Nolan" , (long) 2014));
-        listFilm.add(new Film("Ready Player One", 2,"Par Steven Spielberg" , (long) 2018));
-        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", (long) 2017));
-        listFilm.add(new Film("Matrix",4,"Par les Wachowski", (long) 1999));
-        listFilm.add(new Film("Her",16,"Par Spike Jonze", (long) 2013));
-        listFilm.add(new Film("TEST",14,"Par Spike Jonze", (long) 2019));
+        listFilm.add(new Film("Ready Player One", 1, "Par Steven Spielberg" , (long) 2018));
 
         final ListView listView = findViewById(R.id.ListFilm);
         FilmAdapter = new FilmAdapter(this, listFilm);
@@ -90,37 +81,15 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("mainActivity", ""+ film);
 
                 switch ((int) film){
-                    case 2:
-                        Intent Steven = new Intent(getApplicationContext(), ReadyPlayerOne.class);
-                        startActivity(Steven);
+                    case 1:
+                        Intent rdy = new Intent(getApplicationContext(), ReadyPlayerOne.class);
+                        startActivity(rdy);
                         finish();
                         break;
                     default:
                         break;
-            }
+                }
             }
         });
     }
-
-    public void goToReal(View view) {
-        Intent goToReal = new Intent(getApplicationContext(), ListRealisateur.class);
-        startActivity(goToReal);
     }
-   /* public ArrayList triAnnee(ArrayList listFilm){
-        int taille = listFilm.size();
-        int i, j, min;
-        for(i =1; i<taille; i++){
-            Film f1 = (Film) listFilm.get(i);
-            Film f2 = (Film) listFilm.get(i-1);
-            if(f1.getDate() < f2.getDate()){
-                j = i;
-                min = f2.getId();
-                do{
-                    listFilm.get(j) = listFilm.get(j-1);
-                }while(j>0 && min<listFilm.get(j-1));
-                listFilm(j) = min;
-            }
-        }
-        return listFilm;
-    }*/
-}
