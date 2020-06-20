@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
@@ -24,18 +23,17 @@ import com.example.filmamora.R;
 
 import java.util.ArrayList;
 
-public class StevenSpielberg_list extends AppCompatActivity {
+public class SpikeJonze extends AppCompatActivity {
 
     private ArrayList<Film> listFilm;
     private Button triAnnee;
     private Button triTitre;
-    private FilmAdapter FilmAdapter;
+    private com.example.filmamora.Adapter.FilmAdapter FilmAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_steven_spielberg_list);
-
+        setContentView(R.layout.activity_spike_jonze);
 
         this.triAnnee = findViewById(R.id.btnTri2);
         this.triTitre = findViewById(R.id.btnTri1);
@@ -43,7 +41,7 @@ public class StevenSpielberg_list extends AppCompatActivity {
 
         //List des items
         this.listFilm = new ArrayList<Film>();
-        listFilm.add(new Film("Ready Player One", 2, "Par Steven Spielberg" , (long) 2018));
+        listFilm.add(new Film("Her",16,"Par Spike Jonze", (long) 2013));
 
         final ListView listView = findViewById(R.id.ListFilm);
         FilmAdapter = new FilmAdapter(this, listFilm);
@@ -77,7 +75,7 @@ public class StevenSpielberg_list extends AppCompatActivity {
                 Log.d("mainActivity", ""+ film);
 
                 switch ((int) film){
-                    case 2:
+                    case 16:
                         Intent rdy = new Intent(getApplicationContext(), ReadyPlayerOne.class);
                         startActivity(rdy);
                         finish();
@@ -97,4 +95,4 @@ public class StevenSpielberg_list extends AppCompatActivity {
         Intent goBackFilm = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(goBackFilm);
     }
-    }
+}

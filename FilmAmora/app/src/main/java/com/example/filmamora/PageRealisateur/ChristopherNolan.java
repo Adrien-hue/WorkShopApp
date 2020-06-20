@@ -24,9 +24,10 @@ import com.example.filmamora.R;
 
 import java.util.ArrayList;
 
-public class StevenSpielberg_list extends AppCompatActivity {
+public class ChristopherNolan extends AppCompatActivity {
 
     private ArrayList<Film> listFilm;
+
     private Button triAnnee;
     private Button triTitre;
     private FilmAdapter FilmAdapter;
@@ -34,7 +35,7 @@ public class StevenSpielberg_list extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_steven_spielberg_list);
+        setContentView(R.layout.activity_christopher_nolan);
 
 
         this.triAnnee = findViewById(R.id.btnTri2);
@@ -43,7 +44,7 @@ public class StevenSpielberg_list extends AppCompatActivity {
 
         //List des items
         this.listFilm = new ArrayList<Film>();
-        listFilm.add(new Film("Ready Player One", 2, "Par Steven Spielberg" , (long) 2018));
+        listFilm.add(new Film("Interstellar", 1, "Par Christopher Nolan" , (long) 2014));
 
         final ListView listView = findViewById(R.id.ListFilm);
         FilmAdapter = new FilmAdapter(this, listFilm);
@@ -77,7 +78,7 @@ public class StevenSpielberg_list extends AppCompatActivity {
                 Log.d("mainActivity", ""+ film);
 
                 switch ((int) film){
-                    case 2:
+                    case 1:
                         Intent rdy = new Intent(getApplicationContext(), ReadyPlayerOne.class);
                         startActivity(rdy);
                         finish();
@@ -97,4 +98,4 @@ public class StevenSpielberg_list extends AppCompatActivity {
         Intent goBackFilm = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(goBackFilm);
     }
-    }
+}
