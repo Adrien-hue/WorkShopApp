@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView filmDate;
     private Button triAnnee;
     private Button triTitre;
+    private TextView linkFilm;
     private FilmAdapter FilmAdapter;
 
     @Override
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.linkFilm = findViewById(R.id.filmLink);
+        linkFilm.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
         this.filmDate = (TextView) findViewById(R.id.item_date);
         this.filmInfo = findViewById(R.id.item_info);
         this.filmName = findViewById(R.id.item_name);
@@ -106,21 +110,6 @@ public class MainActivity extends AppCompatActivity {
         Intent goToReal = new Intent(getApplicationContext(), ListRealisateur.class);
         startActivity(goToReal);
     }
-   /* public ArrayList triAnnee(ArrayList listFilm){
-        int taille = listFilm.size();
-        int i, j, min;
-        for(i =1; i<taille; i++){
-            Film f1 = (Film) listFilm.get(i);
-            Film f2 = (Film) listFilm.get(i-1);
-            if(f1.getDate() < f2.getDate()){
-                j = i;
-                min = f2.getId();
-                do{
-                    listFilm.get(j) = listFilm.get(j-1);
-                }while(j>0 && min<listFilm.get(j-1));
-                listFilm(j) = min;
-            }
-        }
-        return listFilm;
-    }*/
+
+
 }

@@ -13,7 +13,7 @@
         android:textSize="20dp"
         android:layout_margin="30dp"
         android:id="@+id/item_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sriracha"
         android:text="item_name"
