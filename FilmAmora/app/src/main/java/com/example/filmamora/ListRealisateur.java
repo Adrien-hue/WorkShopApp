@@ -17,6 +17,7 @@ import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.Adapter.RealAdapter;
 import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
 import com.example.filmamora.Objet.Realisateur;
+import com.example.filmamora.PageRealisateur.StevenSpielberg_list;
 
 import java.util.ArrayList;
 
@@ -55,7 +56,7 @@ public class ListRealisateur extends AppCompatActivity {
 
                 switch ((int) realisateur){
                     case 1:
-                        Intent Steven = new Intent(getApplicationContext(), ReadyPlayerOne.class);
+                        Intent Steven = new Intent(getApplicationContext(), StevenSpielberg_list.class);
                         startActivity(Steven);
                         finish();
                         break;

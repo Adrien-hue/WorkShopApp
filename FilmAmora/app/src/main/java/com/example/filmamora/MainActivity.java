@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
         //List des items
         this.listFilm = new ArrayList<Film>();
-        listFilm.add(new Film("Ready Player One", 2, "Par Steven Spielberg" , (long) 2018));
-        listFilm.add(new Film("Interstellar", 1,"Par Christopher Nolan" , (long) 2014));
+        listFilm.add(new Film("Ready Player One", 1, "Par Steven Spielberg" , (long) 2018));
+        listFilm.add(new Film("Interstellar", 2,"Par Christopher Nolan" , (long) 2014));
         listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", (long) 2017));
         listFilm.add(new Film("Matrix",4,"Par les Wachowski", (long) 1999));
         listFilm.add(new Film("Her",16,"Par Spike Jonze", (long) 2013));
