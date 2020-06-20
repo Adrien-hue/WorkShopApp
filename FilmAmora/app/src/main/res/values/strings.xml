@@ -7,4 +7,8 @@
     <string name="realisateur">Par réal</string>
     <string name="film_a_voir">Mes films à voir</string>
     <string name="notes_film">Mes films notés</string>
+    <string name="rdyplayer_syno">"2045. Le monde est au bord du chaos.Les êtres humains se réfugient dans l'OASIS, univers virtuel misau point par le brillant et excentrique James Halliday.Avant de disparaître, celui-ci a décidé de léguer sonimmense fortune à quiconque découvrira l'œuf de Pâquesnumérique qu'il a pris soin de dissimuler dans l'OASIS.L'appât du gain provoque une compétition planétaire.Mais lorsqu'un jeune garçon, Wade Watts,qui n'a pourtant pas le profil d'un héros,décide de participer à la chasse au trésor,il est plongé dans un monde parallèle à la fois mystérieuxet inquiétant…"</string>
+    <string name="rdyplayer_acteurs">Tye Sheridan, Oliva Cooke, Ben Mendelsohn, Lena Waithe, Simon Pegg, Mark Rylance, T.J Miller, Hannah John-Karmen...</string>
+    <string name="interstellar_acteurs">Matthew McConaughey, Anna Hathaway, Michael Caine, Jessica Chastain, Wes Bentley</string>
+    <string name="interstellar_syno">Alors que la Terre se meurt, une équipe d\'astronautes franchit un trou de ver apparu près de Saturne et conduisant à une autre galaxie, afin d\'explorer un nouveau système stellaire et dans l'espoir de trouver une planète habitable et y établir une colonie spatiale pour sauver l'humanité.</string>
 </resources>
