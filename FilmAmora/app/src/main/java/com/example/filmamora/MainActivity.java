@@ -3,13 +3,23 @@ package com.example.filmamora;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.filmamora.Adapter.FilmAdapter;
+import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.Objet.FilmComparator;
 import com.example.filmamora.Objet.ProprieteFilm;
@@ -69,5 +79,31 @@ public class MainActivity extends AppCompatActivity {
                 FilmAdapter.update(listFilm);
             }
         });
+
+
+        //Item clickable ======================================================================================
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                long film = listView.getItemIdAtPosition(position);
+                Log.d("mainActivity", ""+ film);
+
+                switch ((int) film){
+                    case 1:
+                        Intent Steven = new Intent(getApplicationContext(), ReadyPlayerOne.class);
+                        startActivity(Steven);
+                        finish();
+                        break;
+                    default:
+                        break;
+            }
+            }
+        });
+    }
+
+    public void goToReal(View view) {
+        Intent goToReal = new Intent(getApplicationContext(), ListRealisateur.class);
+        startActivity(goToReal);
     }
 }
