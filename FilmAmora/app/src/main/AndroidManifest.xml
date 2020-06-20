@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PageRealisateur.SpikeJonze"></activity>
+        <activity android:name=".DetailsFilm.Valerian"></activity>
+        <activity android:name=".PageRealisateur.SpikeJonze" />
         <activity android:name=".PageRealisateur.LucBesson" />
         <activity android:name=".PageRealisateur.ChristopherNolan" />
         <activity

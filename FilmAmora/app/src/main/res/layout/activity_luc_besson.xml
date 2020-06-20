@@ -12,7 +12,7 @@
         android:id="@+id/layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPurple">
+        android:background="@color/colorNoirGris">
 
         <!--METTRE TOUT LE MENU ICI OU AUTRE POUR ETRE AU DESSUS DE LA LISTE
                                 en dessous de ça -->
