@@ -72,7 +72,7 @@
             android:layout_weight="1"
             android:background="@color/colorLightPurple"
             android:textColor="@color/colorWhite"
-            android:text="Trier par Année" />
+            android:text="Trier par Année"/>
     </LinearLayout>
 
         </LinearLayout>

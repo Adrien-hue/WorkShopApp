@@ -1,7 +1,7 @@
 package com.example.filmamora.Objet;
 
 
-public class Film implements Comparable<Film>{
+public class Film{
 
     private final String name;
     private String info;
@@ -22,11 +22,5 @@ public class Film implements Comparable<Film>{
     public int getId(){ return id; }
 
     public String getInfo(){ return info; }
-
-
-    @Override
-    public int compareTo(Film f) {
-        return date.compareTo(f.date);
-    }
 
 }
