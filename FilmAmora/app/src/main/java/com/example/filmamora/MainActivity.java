@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("mainActivity", ""+ film);
 
                 switch ((int) film){
-                    case 1:
+                    case 2:
                         Intent Steven = new Intent(getApplicationContext(), ReadyPlayerOne.class);
                         startActivity(Steven);
                         finish();
