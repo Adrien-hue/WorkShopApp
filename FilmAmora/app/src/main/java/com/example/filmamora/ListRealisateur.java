@@ -17,6 +17,9 @@ import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.Adapter.RealAdapter;
 import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
 import com.example.filmamora.Objet.Realisateur;
+import com.example.filmamora.PageRealisateur.ChristopherNolan;
+import com.example.filmamora.PageRealisateur.LucBesson;
+import com.example.filmamora.PageRealisateur.SpikeJonze;
 import com.example.filmamora.PageRealisateur.StevenSpielberg_list;
 
 import java.util.ArrayList;
@@ -40,8 +43,8 @@ public class ListRealisateur extends AppCompatActivity {
 
         listReal.add(new Realisateur(1, "Steven Spielberg"));
         listReal.add(new Realisateur(2, "Christopher Nolan"));
-        listReal.add(new Realisateur(4, "Luc Besson"));
-        listReal.add(new Realisateur(5, "Spike Jonze"));
+        listReal.add(new Realisateur(3, "Luc Besson"));
+        listReal.add(new Realisateur(4, "Spike Jonze"));
 
         final ListView listView = findViewById(R.id.ListRealisateur);
 
@@ -60,15 +63,15 @@ public class ListRealisateur extends AppCompatActivity {
                         startActivity(Steven);
                         finish();
                         break;
-                    case 2:  Intent Christopher = new Intent(getApplicationContext(), ReadyPlayerOne.class);
+                    case 2:  Intent Christopher = new Intent(getApplicationContext(), ChristopherNolan.class);
                         startActivity(Christopher);
                         finish();;
                         break;
-                    case 3:  Intent Luc = new Intent(getApplicationContext(), ReadyPlayerOne.class);
+                    case 3:  Intent Luc = new Intent(getApplicationContext(), LucBesson.class);
                         startActivity(Luc);
                         finish();;
                         break;
-                    case 4:  Intent Spike = new Intent(getApplicationContext(), ReadyPlayerOne.class);
+                    case 4:  Intent Spike = new Intent(getApplicationContext(), SpikeJonze.class);
                         startActivity(Spike);
                         finish();;
                         break;
@@ -81,9 +84,9 @@ public class ListRealisateur extends AppCompatActivity {
         });
     }
 
-    public void backHome(View view) {
-        Intent backHome = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(backHome);
-        finish();
+    public void goBackFilm(View view){
+        Intent goBackFilm = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(goBackFilm);
     }
+
 }
