@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListRealisateur">
+    tools:context=".ListRealisateur"
+    android:background="@color/colorPurple">
 
     <RelativeLayout
         android:id="@+id/layout"
@@ -53,12 +54,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/top">
+
             <ListView
                 android:id="@+id/ListRealisateur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPurple"
-                app:fontFamily="sans-serif-black"
                 />
         </LinearLayout>
     </RelativeLayout>

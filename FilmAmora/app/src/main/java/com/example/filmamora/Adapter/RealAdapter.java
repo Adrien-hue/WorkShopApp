@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.filmamora.Objet.Film;
 import com.example.filmamora.Objet.Realisateur;
 import com.example.filmamora.R;
 
@@ -52,16 +51,8 @@ public class RealAdapter extends BaseAdapter {
         Realisateur currentItem = (Realisateur) getItem(i);
         String itemName = currentItem.getName();
 
-        int id = currentItem.getId();
-
         TextView itemNameView = view.findViewById(R.id.item_name);
         itemNameView.setText(itemName);
-
-        ImageView itemImageView = view.findViewById(R.id.item_icon);
-        String ressourceName = "item_" + id;
-
-        int resId = context.getResources().getIdentifier(ressourceName, "drawable", context.getPackageName());
-        itemImageView.setImageResource(resId);
 
 
         return view;

@@ -55,25 +55,17 @@ public class MainActivity extends AppCompatActivity {
                 long film = listView.getItemIdAtPosition(position);
                 Log.d("mainActivity", ""+ film);
 
-                if(film == 1){
-                    Intent rdy = new Intent(getApplicationContext(), ReadyPlayerOne.class);
-                    startActivity(rdy);
-
-                }else if(film == 2){
-
-
-                }else if(film == 2){
-
-                }else if(film == 3){
-
-                }else if(film == 4){
-
-                }else if(film == 5){
-
-                }
+                switch ((int) film){
+                    case 1:
+                        Intent Steven = new Intent(getApplicationContext(), ReadyPlayerOne.class);
+                        startActivity(Steven);
+                        finish();
+                        break;
+                    default:
+                        break;
+            }
             }
         });
-
     }
 
     public void goToReal(View view) {
