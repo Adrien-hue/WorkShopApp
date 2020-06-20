@@ -27,10 +27,11 @@
         android:gravity="center_horizontal"
         android:layout_marginRight="2dp"/>
     <TextView
+        android:id="@+id/parreal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/realisateur"
-        android:linksClickable="true"
+        android:onClick="goToReal"
         android:layout_weight="1"
         android:textColor="@color/colorWhite"
         android:fontFamily="@font/sriracha"
