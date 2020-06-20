@@ -9,6 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".DetailsFilm.Valerian"></activity>
+        <activity android:name=".PageRealisateur.SpikeJonze" />
+        <activity android:name=".PageRealisateur.LucBesson" />
+        <activity android:name=".PageRealisateur.ChristopherNolan" />
+        <activity
+            android:name=".PageRealisateur.StevenSpielberg_list"
+            android:parentActivityName=".ListRealisateur" />
+        <activity
+            android:name=".ListRealisateur"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DetailsFilm.ReadyPlayerOne"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
