@@ -11,10 +11,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
+import com.example.filmamora.DetailsFilm.Valerian;
 import com.example.filmamora.ListRealisateur;
 import com.example.filmamora.MainActivity;
 import com.example.filmamora.Objet.Film;
@@ -24,18 +24,17 @@ import com.example.filmamora.R;
 
 import java.util.ArrayList;
 
-public class StevenSpielberg_list extends AppCompatActivity {
+public class LucBesson extends AppCompatActivity {
 
     private ArrayList<Film> listFilm;
     private Button triAnnee;
     private Button triTitre;
-    private FilmAdapter FilmAdapter;
+    private com.example.filmamora.Adapter.FilmAdapter FilmAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_steven_spielberg_list);
-
+        setContentView(R.layout.activity_luc_besson);
 
         this.triAnnee = findViewById(R.id.btnTri2);
         this.triTitre = findViewById(R.id.btnTri1);
@@ -43,7 +42,7 @@ public class StevenSpielberg_list extends AppCompatActivity {
 
         //List des items
         this.listFilm = new ArrayList<Film>();
-        listFilm.add(new Film("Ready Player One", 2, "Par Steven Spielberg" , (long) 2018));
+        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", (long) 2017));
 
         final ListView listView = findViewById(R.id.ListFilm);
         FilmAdapter = new FilmAdapter(this, listFilm);
@@ -77,8 +76,8 @@ public class StevenSpielberg_list extends AppCompatActivity {
                 Log.d("mainActivity", ""+ film);
 
                 switch ((int) film){
-                    case 2:
-                        Intent rdy = new Intent(getApplicationContext(), ReadyPlayerOne.class);
+                    case 3:
+                        Intent rdy = new Intent(getApplicationContext(), Valerian.class);
                         startActivity(rdy);
                         finish();
                         break;
@@ -97,4 +96,4 @@ public class StevenSpielberg_list extends AppCompatActivity {
         Intent goBackFilm = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(goBackFilm);
     }
-    }
+}

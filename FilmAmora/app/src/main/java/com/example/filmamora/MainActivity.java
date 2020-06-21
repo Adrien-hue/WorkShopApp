@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.filmamora.Adapter.FilmAdapter;
+import com.example.filmamora.DetailsFilm.Interstellar;
 import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
+import com.example.filmamora.DetailsFilm.Valerian;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.Objet.FilmComparator;
 import com.example.filmamora.Objet.ProprieteFilm;
@@ -31,11 +34,9 @@ import java.util.Collections;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Film> listFilm;
-    private TextView filmName;
-    private TextView filmInfo;
-    private TextView filmDate;
     private Button triAnnee;
     private Button triTitre;
+    private TextView linkFilm;
     private FilmAdapter FilmAdapter;
 
     @Override
@@ -43,9 +44,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.filmDate = (TextView) findViewById(R.id.item_date);
-        this.filmInfo = findViewById(R.id.item_info);
-        this.filmName = findViewById(R.id.item_name);
+        this.linkFilm = findViewById(R.id.filmLink);
+        linkFilm.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
         this.triAnnee = findViewById(R.id.btnTri2);
         this.triTitre = findViewById(R.id.btnTri1);
 
@@ -90,11 +90,21 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("mainActivity", ""+ film);
 
                 switch ((int) film){
+                    case 1:
+                        Intent interstellar = new Intent(getApplicationContext(), Interstellar.class);
+                        startActivity(interstellar);
+                        finish();
+                        break;
+
                     case 2:
                         Intent Steven = new Intent(getApplicationContext(), ReadyPlayerOne.class);
                         startActivity(Steven);
                         finish();
                         break;
+                    case 3:
+                        Intent valerian = new Intent(getApplicationContext(), Valerian.class);
+                        startActivity(valerian);
+                        finish();
                     default:
                         break;
             }
