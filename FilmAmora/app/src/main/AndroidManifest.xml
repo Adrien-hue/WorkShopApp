@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailsFilm.Valerian"></activity>
-        <activity android:name=".PageRealisateur.SpikeJonze" />
-        <activity android:name=".PageRealisateur.LucBesson" />
-        <activity android:name=".PageRealisateur.ChristopherNolan" />
+        <activity android:name=".DetailsFilm.Valerian" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".PageRealisateur.SpikeJonze" android:parentActivityName=".ListRealisateur"/>
+        <activity android:name=".PageRealisateur.LucBesson" android:parentActivityName=".ListRealisateur"/>
+        <activity android:name=".PageRealisateur.ChristopherNolan" android:parentActivityName=".ListRealisateur"/>
         <activity
             android:name=".PageRealisateur.StevenSpielberg_list"
             android:parentActivityName=".ListRealisateur" />
@@ -21,6 +21,9 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DetailsFilm.ReadyPlayerOne"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DetailsFilm.Interstellar"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
