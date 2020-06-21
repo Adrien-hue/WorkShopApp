@@ -26,6 +26,7 @@ import com.example.filmamora.DetailsFilm.Valerian;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.Objet.FilmComparator;
 import com.example.filmamora.Objet.ProprieteFilm;
+import com.example.filmamora.database.DBManager;
 
 import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
@@ -38,11 +39,16 @@ public class MainActivity extends AppCompatActivity {
     private Button triTitre;
     private TextView linkFilm;
     private FilmAdapter FilmAdapter;
+    private DBManager c3po;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Create db manager
+        c3po = new DBManager(this);
+
 
         this.linkFilm = findViewById(R.id.filmLink);
         linkFilm.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
@@ -50,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         this.triTitre = findViewById(R.id.btnTri1);
 
         //List des items
+        ArrayList<Film> products = c3po.getAllFilm();
         this.listFilm = new ArrayList<Film>();
         listFilm.add(new Film("Interstellar", 1, "Par Christopher Nolan" , (long) 2014));
         listFilm.add(new Film("Ready Player One", 2,"Par Steven Spielberg" , (long) 2018));
