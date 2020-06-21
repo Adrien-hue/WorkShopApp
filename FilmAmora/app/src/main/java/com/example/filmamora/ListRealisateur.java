@@ -21,12 +21,15 @@ import com.example.filmamora.PageRealisateur.ChristopherNolan;
 import com.example.filmamora.PageRealisateur.LucBesson;
 import com.example.filmamora.PageRealisateur.SpikeJonze;
 import com.example.filmamora.PageRealisateur.StevenSpielberg_list;
+import com.example.filmamora.database.DBManager;
 
 import java.util.ArrayList;
 
 public class ListRealisateur extends AppCompatActivity {
 
     private TextView parReal;
+    private ArrayList<Realisateur> listRealisateur;
+    private DBManager c3po;
 
 
     @Override
@@ -39,16 +42,11 @@ public class ListRealisateur extends AppCompatActivity {
         this.parReal = findViewById(R.id.parreal);
         parReal.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
 
-        final ArrayList<Realisateur> listReal = new ArrayList<Realisateur>();
-
-        listReal.add(new Realisateur(1, "Steven Spielberg"));
-        listReal.add(new Realisateur(2, "Christopher Nolan"));
-        listReal.add(new Realisateur(3, "Luc Besson"));
-        listReal.add(new Realisateur(4, "Spike Jonze"));
+        listRealisateur = c3po.getAllRealisateur();
 
         final ListView listView = findViewById(R.id.ListRealisateur);
 
-        listView.setAdapter(new RealAdapter(this, listReal));
+        listView.setAdapter(new RealAdapter(this, listRealisateur));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -126,5 +126,31 @@ public class DBManager {
         c.close();
         return results;
     }
+
+    public ArrayList<Realisateur> getAllRealisateur() {
+        //TODO
+        ArrayList<Realisateur> results = new ArrayList<>();
+        String sqlQuery = "";
+        //Log.d(TAG, sqlQuery);
+
+        //Get database
+        db = r2d2.getReadableDatabase();
+
+        //Execute query and get response
+        Cursor c = db.rawQuery(sqlQuery, null);
+
+        //Init cursor to first row
+        if(!c.moveToFirst()){
+            // Log.v(TAG, "There are no products in the database");
+        }else{
+            do{
+                //Add new film to list
+                //results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+            }while(c.moveToNext());
+        }
+
+        c.close();
+        return results;
+    }
 }
 
