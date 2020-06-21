@@ -69,7 +69,7 @@ public class DBManager {
         }else{
             do{
                 //Add new person to list
-                results.add(new Realisateur(c.getInt(1), c.getString(2));
+                results.add(new Realisateur(c.getInt(1), c.getString(2)));
             }while(c.moveToNext());
         }
 
