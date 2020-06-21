@@ -131,7 +131,8 @@ public class DBManager {
     public ArrayList<Film> getFilmParReal(int Realisateur) {
         //TODO A VERIFIER !
         ArrayList<Film> results = new ArrayList<>();
-        String sqlQuery = "SELECT * FROM Film f INNER JOIN participe p ON p.id_Film = f.id INNER JOIN personne pers ON pers.id = p.id WHERE pers.id = " +Realisateur;
+        String sqlQuery = "SELECT * FROM Film f JOIN participe p ON p.id_Film = f.id JOIN personne pers ON pers.id = p.id WHERE pers.id = "+ Realisateur +";";
+
         //Log.d(TAG, sqlQuery);
 
         //Get database
