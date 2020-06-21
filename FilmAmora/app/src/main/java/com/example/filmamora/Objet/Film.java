@@ -30,7 +30,7 @@ public class Film{
         Acteurs = acteurs;
     }
 
-    public Film(int id, String titre, Long annee,  String p_nom, String p_prenom) {
+    public Film(int id, String titre, Long annee, String p_prenom, String p_nom) {
         this.id = id;
         this.titre = titre;
         this.annee = annee;
@@ -46,7 +46,6 @@ public class Film{
         this.aVoir = aVoir;
         this.note = note;
         this.critique = critique;
-
     }
 
     public String getP_nom() {

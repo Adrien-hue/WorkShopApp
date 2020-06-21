@@ -51,6 +51,7 @@ public class FilmAdapter extends BaseAdapter {
 
 
         Film currentItem = (Film) getItem(i);
+
         String itemName = currentItem.getTitre();
         Long itemDate = currentItem.getAnnee();
         String prenom = currentItem.getP_prenom();
@@ -66,8 +67,6 @@ public class FilmAdapter extends BaseAdapter {
         int resId = context.getResources().getIdentifier(ressourceName, "drawable", context.getPackageName());
         itemImageView.setImageResource(resId);
 
-        //TODO TextView itemInfoView = view.findViewById(R.id.item_info);
-        //TODO itemInfoView.setText(itemInfo);
 
         TextView itemPrenom = view.findViewById(R.id.item_prenom);
         itemPrenom.setText(prenom);

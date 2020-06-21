@@ -3,6 +3,7 @@ package com.example.filmamora.database;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.Objet.Realisateur;
@@ -46,7 +47,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                results.add(new Film(c.getInt(1), c.getString(2), c.getLong(3),c.getString(4), c.getString(5)));
+                results.add(new Film(c.getInt(1), c.getString(2), c.getLong(3), c.getString(4), c.getString(5)));
             }while(c.moveToNext());
         }
 
