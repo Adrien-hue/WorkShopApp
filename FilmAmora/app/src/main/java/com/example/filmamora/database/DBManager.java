@@ -21,15 +21,16 @@ public class DBManager {
 
     }
 
-    public void addNewCritiqueToDB(Film f){
+    public void addNewCritiqueToDB(int idFilm, int note, String critique){
         db = r2d2.getWritableDatabase();
-        String sqlQuery = "";
+        String sqlQuery = "INSERT INTO Avis (note, critique, id_Film) VALUES (" + note + ",'"+ critique+"', "+ idFilm +");";
         //Log.d(TAG, sqlQuery);
         db.execSQL(sqlQuery);
     }
+
     public ArrayList<Film> getAllFilm(){
         ArrayList<Film> results = new ArrayList<>();
-        String sqlQuery = "";
+        String sqlQuery = "SELECT * FROM Film f JOIN Avis a ON f.id = a.id_Film ;";
         //Log.d(TAG, sqlQuery);
 
         //Get database
@@ -44,7 +45,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+                results.add(new Film(c.getInt(1), c.getString(2), c.getLong(3),c.getString(4), c.getInt(5), c.getInt(6), c.getString(7)));
             }while(c.moveToNext());
         }
 
@@ -52,9 +53,9 @@ public class DBManager {
         return results;
     }
 
-    public ArrayList<Realisateur> getAllPeople(){
+    public ArrayList<Realisateur> getAllActeur(int idFilm){
         ArrayList<Realisateur> results = new ArrayList<>();
-        String sqlQuery = "";
+        String sqlQuery = "SELECT p.id, p.nom, p.prenom FROM Personne per JOIN Participe par ON p.id = par.id WHERE par.id_Film == "+ idFilm +" AND par.id_Role == 1;";
         //Log.d(TAG, sqlQuery);
 
         //Get database
@@ -69,32 +70,7 @@ public class DBManager {
         }else{
             do{
                 //Add new person to list
-                results.add(new Realisateur(c.getInt(1), c.getString(2)));
-            }while(c.moveToNext());
-        }
-
-        c.close();
-        return results;
-    }
-
-    public ArrayList<Film> getRole(){
-        ArrayList<Film> results = new ArrayList<>();
-        String sqlQuery = "";
-        //Log.d(TAG, sqlQuery);
-
-        //Get database
-        db = r2d2.getReadableDatabase();
-
-        //Execute query and get response
-        Cursor c = db.rawQuery(sqlQuery, null);
-
-        //Init cursor to first row
-        if(!c.moveToFirst()){
-            // Log.v(TAG, "There are no products in the database");
-        }else{
-            do{
-                //Add new film to list
-                results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+                results.add(new Realisateur(c.getInt(1), c.getString(2), c.getString(3)));
             }while(c.moveToNext());
         }
 
@@ -104,7 +80,7 @@ public class DBManager {
 
     public ArrayList<Film> getAllAvis(){
         ArrayList<Film> results = new ArrayList<>();
-        String sqlQuery = "";
+        String sqlQuery = "SELECT * FROM Avis a JOIN Film F ON a.id_Film = f.id";
         //Log.d(TAG, sqlQuery);
 
         //Get database
@@ -119,7 +95,59 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+                        //results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+            }while(c.moveToNext());
+        }
+
+        c.close();
+        return results;
+    }
+
+    public ArrayList<Realisateur> getAllRealisateur() {
+        ArrayList<Realisateur> results = new ArrayList<>();
+        String sqlQuery = "SELECT p.id, p.nom, p.prenom FROM Personne per JOIN Participe par ON p.id = par.id WHERE par.id_Role == 2;";
+        //Log.d(TAG, sqlQuery);
+
+        //Get database
+        db = r2d2.getReadableDatabase();
+
+        //Execute query and get response
+        Cursor c = db.rawQuery(sqlQuery, null);
+
+        //Init cursor to first row
+        if(!c.moveToFirst()){
+            // Log.v(TAG, "There are no products in the database");
+        }else{
+            do{
+                //Add new film to list
+                //results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+            }while(c.moveToNext());
+        }
+
+        c.close();
+        return results;
+    }
+
+    public ArrayList<Film> getFilmParReal(int Realisateur) {
+        //TODO A VERIFIER !
+        ArrayList<Film> results = new ArrayList<>();
+        String sqlQuery = "SELECT * FROM Film f JOIN participe p ON p.id_Film = f.id JOIN personne pers ON pers.id = p.id WHERE pers.id = "+ Realisateur +";";
+
+        //Log.d(TAG, sqlQuery);
+
+        //Get database
+        db = r2d2.getReadableDatabase();
+
+        //Execute query and get response
+        Cursor c = db.rawQuery(sqlQuery, null);
+
+        //Init cursor to first row
+        if(!c.moveToFirst()){
+            // Log.v(TAG, "There are no products in the database");
+        }else{
+            do{
+                //Add new film to list
+                //results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
             }while(c.moveToNext());
         }
 

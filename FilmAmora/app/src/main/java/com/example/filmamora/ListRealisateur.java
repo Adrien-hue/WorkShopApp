@@ -8,25 +8,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.Adapter.RealAdapter;
-import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
 import com.example.filmamora.Objet.Realisateur;
-import com.example.filmamora.PageRealisateur.ChristopherNolan;
-import com.example.filmamora.PageRealisateur.LucBesson;
-import com.example.filmamora.PageRealisateur.SpikeJonze;
-import com.example.filmamora.PageRealisateur.StevenSpielberg_list;
+import com.example.filmamora.database.DBManager;
 
 import java.util.ArrayList;
 
 public class ListRealisateur extends AppCompatActivity {
 
     private TextView parReal;
+    private ArrayList<Realisateur> listRealisateur;
+    private DBManager c3po;
 
 
     @Override
@@ -39,16 +34,11 @@ public class ListRealisateur extends AppCompatActivity {
         this.parReal = findViewById(R.id.parreal);
         parReal.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
 
-        final ArrayList<Realisateur> listReal = new ArrayList<Realisateur>();
-
-        listReal.add(new Realisateur(1, "Steven Spielberg"));
-        listReal.add(new Realisateur(2, "Christopher Nolan"));
-        listReal.add(new Realisateur(3, "Luc Besson"));
-        listReal.add(new Realisateur(4, "Spike Jonze"));
+        listRealisateur = c3po.getAllRealisateur();
 
         final ListView listView = findViewById(R.id.ListRealisateur);
 
-        listView.setAdapter(new RealAdapter(this, listReal));
+        listView.setAdapter(new RealAdapter(this, listRealisateur));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -57,28 +47,10 @@ public class ListRealisateur extends AppCompatActivity {
                 long realisateur = listView.getItemIdAtPosition(position);
                 Log.d("mainActivity", "" + realisateur);
 
-                switch ((int) realisateur){
-                    case 1:
-                        Intent Steven = new Intent(getApplicationContext(), StevenSpielberg_list.class);
-                        startActivity(Steven);
+                        Intent ListFilm_par_Realisateur = new Intent(getApplicationContext(), StevenSpielberg_list.class);
+                ListFilm_par_Realisateur.putExtra("idRealisateur", realisateur);
+                        startActivity(ListFilm_par_Realisateur);
                         finish();
-                        break;
-                    case 2:  Intent Christopher = new Intent(getApplicationContext(), ChristopherNolan.class);
-                        startActivity(Christopher);
-                        finish();;
-                        break;
-                    case 3:  Intent Luc = new Intent(getApplicationContext(), LucBesson.class);
-                        startActivity(Luc);
-                        finish();;
-                        break;
-                    case 4:  Intent Spike = new Intent(getApplicationContext(), SpikeJonze.class);
-                        startActivity(Spike);
-                        finish();;
-                        break;
-                    default:
-                        break;
-                }
-
 
             }
         });

@@ -48,10 +48,12 @@ public class FilmAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view =inflater.inflate(R.layout.adapter_list, null);
 
+
+
         Film currentItem = (Film) getItem(i);
-        String itemName = currentItem.getName();
-        Long itemDate = currentItem.getDate();
-        String itemInfo = currentItem.getInfo();
+        String itemName = currentItem.getTitre();
+        Long itemDate = currentItem.getAnnee();
+        //TODO String prenom = currentItem.get();
         int id = currentItem.getId();
 
         TextView itemNameView = view.findViewById(R.id.item_name);
@@ -63,8 +65,8 @@ public class FilmAdapter extends BaseAdapter {
         int resId = context.getResources().getIdentifier(ressourceName, "drawable", context.getPackageName());
         itemImageView.setImageResource(resId);
 
-        TextView itemInfoView = view.findViewById(R.id.item_info);
-        itemInfoView.setText(itemInfo);
+        //TODO TextView itemInfoView = view.findViewById(R.id.item_info);
+        //TODO itemInfoView.setText(itemInfo);
 
         TextView itemDateView = view.findViewById(R.id.item_date);
         itemDateView.setText("Sorti en " + itemDate);

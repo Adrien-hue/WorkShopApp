@@ -56,14 +56,7 @@ public class MainActivity extends AppCompatActivity {
         this.triTitre = findViewById(R.id.btnTri1);
 
         //List des items
-        ArrayList<Film> products = c3po.getAllFilm();
-        this.listFilm = new ArrayList<Film>();
-        listFilm.add(new Film("Interstellar", 1, "Par Christopher Nolan" , (long) 2014));
-        listFilm.add(new Film("Ready Player One", 2,"Par Steven Spielberg" , (long) 2018));
-        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", (long) 2017));
-        listFilm.add(new Film("Matrix",4,"Par les Wachowski", (long) 1999));
-        listFilm.add(new Film("Her",16,"Par Spike Jonze", (long) 2013));
-        listFilm.add(new Film("TEST",14,"Par Spike Jonze", (long) 2019));
+       listFilm = c3po.getAllFilm();
 
         final ListView listView = findViewById(R.id.ListFilm);
         FilmAdapter = new FilmAdapter(this, listFilm);
@@ -73,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
-                listFilm.sort(new FilmComparator(ProprieteFilm.DATE));
+                listFilm.sort(new FilmComparator(ProprieteFilm.ANNEE));
                 FilmAdapter.update(listFilm);
             }
         });
@@ -82,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
-                listFilm.sort(new FilmComparator(ProprieteFilm.NAME));
+                listFilm.sort(new FilmComparator(ProprieteFilm.TITRE));
                 FilmAdapter.update(listFilm);
             }
         });
