@@ -53,7 +53,8 @@ public class FilmAdapter extends BaseAdapter {
         Film currentItem = (Film) getItem(i);
         String itemName = currentItem.getTitre();
         Long itemDate = currentItem.getAnnee();
-        //TODO String prenom = currentItem.get();
+        String prenom = currentItem.getP_prenom();
+        String nom = currentItem.getP_nom();
         int id = currentItem.getId();
 
         TextView itemNameView = view.findViewById(R.id.item_name);
@@ -67,6 +68,13 @@ public class FilmAdapter extends BaseAdapter {
 
         //TODO TextView itemInfoView = view.findViewById(R.id.item_info);
         //TODO itemInfoView.setText(itemInfo);
+
+        TextView itemPrenom = view.findViewById(R.id.item_prenom);
+        itemPrenom.setText(prenom);
+
+
+        TextView itemNom = view.findViewById(R.id.item_nom);
+        itemNom.setText(nom);
 
         TextView itemDateView = view.findViewById(R.id.item_date);
         itemDateView.setText("Sorti en " + itemDate);

@@ -16,6 +16,9 @@ public class Film{
     private String critique;
     private ArrayList<Acteur> Acteurs;
 
+
+
+
     public Film(int id, String titre, Long annee, String synopsis, int aVoir, int note, String critique, ArrayList<Acteur> acteurs) {
         this.id = id;
         this.titre = titre;
@@ -47,6 +50,13 @@ public class Film{
 
     }
 
+    public String getP_nom() {
+        return p_nom;
+    }
+
+    public String getP_prenom() {
+        return p_prenom;
+    }
     public int getId() {
         return id;
     }
