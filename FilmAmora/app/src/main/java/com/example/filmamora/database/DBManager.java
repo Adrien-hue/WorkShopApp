@@ -31,7 +31,7 @@ public class DBManager {
 
     public ArrayList<Film> getAllFilm(){
         ArrayList<Film> results = new ArrayList<>();
-        String sqlQuery = "SELECT f.id, f.titre, f.annee, pe.prenom, pe.nom FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film JOIN Participe pa ON pa.id_Film = f.id JOIN Personne pe ON pe.id = pa.id WHERE pa.id_role=2;";
+        String sqlQuery = "SELECT f.id, f.titre, f.annee,f.aVoir, pe.prenom, pe.nom FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film JOIN Participe pa ON pa.id_Film = f.id JOIN Personne pe ON pe.id = pa.id WHERE pa.id_role=2;";
 
         //Log.d(TAG, sqlQuery);
 
