@@ -7,11 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private String film = "CREATE TABLE Film(id Int PRIMARY KEY AUTOINCREMENT  NOT NULL , titre Varchar (255) NOT NULL ,annee Date NOT NULL , synopsis Varchar (1000) NOT NULL)";
-    private String personne = "CREATE TABLE personne( id Int PRIMARY KEY AUTOINCREMENT  NOT NULL , nom Varchar (50) NOT NULL , prenom Varchar (50) NOT NULL)";
-    private String role = "CREATE TABLE role(id Int PRIMARY KEY AUTOINCREMENT  NOT NULL , libelle Varchar (255) NOT NULL)";
-    private String avis =  "CREATE TABLE avis(id Int PRIMARY KEY AUTOINCREMENT NOT NULL , note Int NOT NULL , commentaire Varchar (1000) NOT NULL , id_Film Int REFERENCES Film(id) UNIQUE NOT NULL)";
-    private String participe =  "CREATE TABLE participe(id Int REFERENCES personne(id) PRIMARY KEY NOT NULL, id_Film Int REFERENCES Film(id) PRIMARY KEY  NOT NULL , id_role Int REFERENCES role(id) PRIMARY KEY  NOT NULL)";
+    private String film = "CREATE TABLE Film(id integer  PRIMARY KEY AUTOINCREMENT  NOT NULL , titre Varchar (255) NOT NULL , annee Int NOT NULL , synopsis Varchar (1000) NOT NULL);";
+    private String personne = "CREATE TABLE personne( id integer PRIMARY KEY AUTOINCREMENT  NOT NULL , nom Varchar (50) NOT NULL , prenom Varchar (50) NOT NULL);";
+    private String role = "CREATE TABLE role(id integer PRIMARY KEY AUTOINCREMENT  NOT NULL , libelle Varchar (255) NOT NULL);";
+    private String avis =  "CREATE TABLE avis(id integer PRIMARY KEY AUTOINCREMENT NOT NULL , note Int NOT NULL , commentaire Varchar (1000) NOT NULL , id_Film Int REFERENCES Film(id) UNIQUE NOT NULL);";
+    private String participe =  "CREATE TABLE participe(id integer REFERENCES personne(id) NOT NULL, id_Film integer REFERENCES Film(id) NOT NULL , id_role integer REFERENCES role(id) NOT NULL, PRIMARY KEY(id, id_Film, id_role));";
 
 
 
