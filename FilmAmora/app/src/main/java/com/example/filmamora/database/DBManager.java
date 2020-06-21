@@ -57,7 +57,7 @@ public class DBManager {
 
     public ArrayList<Realisateur> getAllActeur(int idFilm){
         ArrayList<Realisateur> results = new ArrayList<>();
-        String sqlQuery = "SELECT p.id, p.nom, p.prenom FROM Personne per JOIN Participe par ON p.id = par.id WHERE par.id_Film == "+ idFilm +" AND par.id_Role == 1;";
+        String sqlQuery = "SELECT per.id, per.nom, per.prenom FROM Personne per JOIN Participe par ON per.id = par.id WHERE par.id_Film = "+ idFilm +" AND par.id_Role = 1;";
         //Log.d(TAG, sqlQuery);
 
         //Get database
@@ -107,7 +107,7 @@ public class DBManager {
 
     public ArrayList<Realisateur> getAllRealisateur() {
         ArrayList<Realisateur> results = new ArrayList<>();
-        String sqlQuery = "SELECT p.id, p.nom, p.prenom FROM Personne per JOIN Participe par ON p.id = par.id WHERE par.id_Role == 2;";
+        String sqlQuery = "SELECT DISTINCT p.id, per.nom, per.prenom FROM Personne per JOIN Participe p ON per.id = p.id WHERE p.id_Role == 2;";
         //Log.d(TAG, sqlQuery);
 
         //Get database
@@ -122,7 +122,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                //results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+                results.add(new Realisateur(c.getInt(1), c.getString(2), c.getString(3)));
             }while(c.moveToNext());
         }
 
