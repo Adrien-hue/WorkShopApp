@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         this.triTitre = findViewById(R.id.btnTri1);
 
         //List des items
-       listFilm = c3po.getAllFilm();
+       this.listFilm = c3po.getAllFilm();
 
         final ListView listView = findViewById(R.id.ListFilm);
         FilmAdapter = new FilmAdapter(this, listFilm);
