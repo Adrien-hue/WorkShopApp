@@ -44,7 +44,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+                results.add(new Film(c.getInt(1), c.getString(2), c.getLong(3),c.getString(4), c.getInt(5), c.getInt(6), c.getString(7)));
             }while(c.moveToNext());
         }
 
@@ -69,7 +69,7 @@ public class DBManager {
         }else{
             do{
                 //Add new person to list
-                results.add(new Realisateur(c.getInt(1), c.getString(2));
+                results.add(new Realisateur(c.getInt(1), c.getString(2), c.getString(3)));
             }while(c.moveToNext());
         }
 
@@ -94,7 +94,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+                        //results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
             }while(c.moveToNext());
         }
 
@@ -119,7 +119,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+                        //results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
             }while(c.moveToNext());
         }
 

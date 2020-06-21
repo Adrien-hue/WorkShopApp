@@ -7,7 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private String createQuery = "";
+    private String createQuery = "CREATE TABLE Film(id Int PRIMARY KEY AUTOINCREMENT  NOT NULL , titre Varchar (255) NOT NULL ,annee Date NOT NULL , synopsis Varchar (1000) NOT NULL)";
+
 
     public DBHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
