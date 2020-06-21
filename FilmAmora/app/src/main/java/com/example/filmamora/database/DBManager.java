@@ -30,7 +30,7 @@ public class DBManager {
 
     public ArrayList<Film> getAllFilm(){
         ArrayList<Film> results = new ArrayList<>();
-        String sqlQuery = "SELECT * FROM Film f JOIN Avis a ON f.id = a.id_Film ;";
+        String sqlQuery = "SELECT * FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film;";
         //Log.d(TAG, sqlQuery);
 
         //Get database

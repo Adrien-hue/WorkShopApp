@@ -46,7 +46,7 @@ public class FilmAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view =inflater.inflate(R.layout.adapter_list, null);
+        view = inflater.inflate(R.layout.adapter_list, null);
 
 
 
