@@ -34,7 +34,7 @@ public class ListRealisateur extends AppCompatActivity {
         this.parReal = findViewById(R.id.parreal);
         parReal.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
 
-        listRealisateur = c3po.getAllRealisateur();
+        this.listRealisateur = c3po.getAllRealisateur();
 
         final ListView listView = findViewById(R.id.ListRealisateur);
 

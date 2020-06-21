@@ -56,9 +56,8 @@ public class RealAdapter extends BaseAdapter {
 
         String itemNom = currentItem.getNom();
 
-        TextView item_Nom = (TextView) view.findViewById(R.id.item_nom);
+        TextView item_Nom = view.findViewById(R.id.item_nom);
         item_Nom.setText(itemNom);
-
 
         return view;
     }

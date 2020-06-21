@@ -6,8 +6,9 @@ import java.util.ArrayList;
 public class Film{
 
     private int id;
-    private final String titre;
-    private final Long annee;
+    private String titre;
+    private Long annee;
+
     private String synopsis;
     private int aVoir;
     private int note;
@@ -25,6 +26,16 @@ public class Film{
         Acteurs = acteurs;
     }
 
+<<<<<<< Updated upstream
+=======
+    public Film(int id, String titre, Long annee, String p_prenom, String p_nom) {
+        this.id = id;
+        this.annee = annee;
+        this.p_nom = p_nom;
+        this.p_prenom = p_prenom;
+    }
+
+>>>>>>> Stashed changes
     public Film(int id, String titre, Long annee, String synopsis, int aVoir, int note, String critique) {
         this.id = id;
         this.titre = titre;
@@ -36,6 +47,13 @@ public class Film{
 
     }
 
+<<<<<<< Updated upstream
+=======
+    public String getP_prenom() {
+        return p_prenom;
+    }
+
+>>>>>>> Stashed changes
     public int getId() {
         return id;
     }

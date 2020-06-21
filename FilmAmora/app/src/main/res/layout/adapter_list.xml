@@ -15,7 +15,7 @@
         android:layout_marginLeft="10dp">
 
         <TextView
-            android:id="@+id/item_name"
+            android:id="@+id/item_titre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -26,7 +26,7 @@
 
     <LinearLayout
         android:id="@+id/real"
-        android:layout_below="@+id/item_name"
+        android:layout_below="@+id/item_titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -41,6 +41,7 @@
             android:textColor="@color/colorWhite"/>
         <TextView
             android:id="@+id/item_nom"
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_name"

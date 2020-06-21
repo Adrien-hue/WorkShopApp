@@ -51,13 +51,23 @@ public class FilmAdapter extends BaseAdapter {
 
 
         Film currentItem = (Film) getItem(i);
+<<<<<<< Updated upstream
         String itemName = currentItem.getTitre();
         Long itemDate = currentItem.getAnnee();
         //TODO String prenom = currentItem.get();
         int id = currentItem.getId();
+=======
 
-        TextView itemNameView = view.findViewById(R.id.item_name);
-        itemNameView.setText(itemName);
+        String prenom = currentItem.getP_prenom();
+
+        String nom = currentItem.getP_nom();
+>>>>>>> Stashed changes
+
+        Long Fdate = currentItem.getAnnee();
+
+        String titre = currentItem.getTitre();
+
+        int id = currentItem.getId();
 
         ImageView itemImageView = view.findViewById(R.id.item_icon);
         String ressourceName = "item_" + id;
@@ -65,11 +75,28 @@ public class FilmAdapter extends BaseAdapter {
         int resId = context.getResources().getIdentifier(ressourceName, "drawable", context.getPackageName());
         itemImageView.setImageResource(resId);
 
+<<<<<<< Updated upstream
         //TODO TextView itemInfoView = view.findViewById(R.id.item_info);
         //TODO itemInfoView.setText(itemInfo);
+=======
 
-        TextView itemDateView = view.findViewById(R.id.item_date);
-        itemDateView.setText("Sorti en " + itemDate);
+
+        TextView itemPrenom = view.findViewById(R.id.item_prenom);
+        itemPrenom.setText(prenom);
+
+        TextView itemNom = view.findViewById(R.id.item_nom);
+        itemNom.setText(nom);
+>>>>>>> Stashed changes
+
+        TextView itemTitre = view.findViewById(R.id.item_titre);
+        itemTitre.setText(titre);
+
+
+
+
+        TextView itemDate = view.findViewById(R.id.item_date);
+        itemDate.setText("Sorti en" + Fdate);
+
 
         return view;
     }
