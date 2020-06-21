@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.filmamora.Objet.Realisateur;
@@ -49,10 +48,16 @@ public class RealAdapter extends BaseAdapter {
         view = inflater.inflate(R.layout.adapter_listrealisateur, null);
 
         Realisateur currentItem = (Realisateur) getItem(i);
-        String itemName = currentItem.getName();
 
-        TextView itemNameView = view.findViewById(R.id.item_name);
-        itemNameView.setText(itemName);
+        String itemPrenom = currentItem.getPrenom();
+
+        TextView item_Prenom = view.findViewById(R.id.item_prenom);
+        item_Prenom.setText(itemPrenom);
+
+        String itemNom = currentItem.getNom();
+
+        TextView item_Nom = (TextView) view.findViewById(R.id.item_nom);
+        item_Nom.setText(itemNom);
 
 
         return view;
