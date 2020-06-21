@@ -14,10 +14,10 @@ public class FilmComparator implements Comparator<Film> {
     @Override
     public int compare(Film film, Film t1) {
         int result = 0;
-        if (proprieteTri == ProprieteFilm.NAME){
+        if (proprieteTri == ProprieteFilm.TITRE){
             result = film.getName().compareTo(t1.getName());
         }
-        else if (proprieteTri == ProprieteFilm.DATE){
+        else if (proprieteTri == ProprieteFilm.ANNEE){
             result = film.getDate().compareTo(t1.getDate());
         }
         return result;

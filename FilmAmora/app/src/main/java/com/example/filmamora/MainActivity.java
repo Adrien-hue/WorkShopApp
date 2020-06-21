@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
-                listFilm.sort(new FilmComparator(ProprieteFilm.DATE));
+                listFilm.sort(new FilmComparator(ProprieteFilm.ANNEE));
                 FilmAdapter.update(listFilm);
             }
         });
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
-                listFilm.sort(new FilmComparator(ProprieteFilm.NAME));
+                listFilm.sort(new FilmComparator(ProprieteFilm.TITRE));
                 FilmAdapter.update(listFilm);
             }
         });

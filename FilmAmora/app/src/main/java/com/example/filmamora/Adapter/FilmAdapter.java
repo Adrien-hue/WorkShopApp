@@ -49,9 +49,9 @@ public class FilmAdapter extends BaseAdapter {
         view =inflater.inflate(R.layout.adapter_list, null);
 
         Film currentItem = (Film) getItem(i);
-        String itemName = currentItem.getName();
-        Long itemDate = currentItem.getDate();
-        String itemInfo = currentItem.getInfo();
+        String itemName = currentItem.getTitre();
+        Long itemDate = currentItem.getAnnee();
+        String itemInfo = currentItem.getSynopsis();
         int id = currentItem.getId();
 
         TextView itemNameView = view.findViewById(R.id.item_name);
