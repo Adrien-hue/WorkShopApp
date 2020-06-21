@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.filmamora.Adapter.FilmAdapter;
+import com.example.filmamora.DetailsFilm.Interstellar;
 import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
 import com.example.filmamora.ListRealisateur;
 import com.example.filmamora.MainActivity;
@@ -79,7 +80,7 @@ public class ChristopherNolan extends AppCompatActivity {
 
                 switch ((int) film){
                     case 1:
-                        Intent rdy = new Intent(getApplicationContext(), ReadyPlayerOne.class);
+                        Intent rdy = new Intent(getApplicationContext(), Interstellar.class);
                         startActivity(rdy);
                         finish();
                         break;
