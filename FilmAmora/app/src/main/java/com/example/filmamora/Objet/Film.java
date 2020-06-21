@@ -11,6 +11,8 @@ public class Film{
     private String synopsis;
     private int aVoir;
     private int note;
+    private String p_nom;
+    private String p_prenom;
     private String critique;
     private ArrayList<Acteur> Acteurs;
 
@@ -23,6 +25,15 @@ public class Film{
         this.note = note;
         this.critique = critique;
         Acteurs = acteurs;
+    }
+
+    public Film(int id, String titre, Long annee, int aVoir, String p_nom, String p_prenom) {
+        this.id = id;
+        this.titre = titre;
+        this.annee = annee;
+        this.aVoir = aVoir;
+        this.p_nom = p_nom;
+        this.p_prenom = p_prenom;
     }
 
     public Film(int id, String titre, Long annee, String synopsis, int aVoir, int note, String critique) {
