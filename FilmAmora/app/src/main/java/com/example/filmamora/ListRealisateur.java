@@ -47,7 +47,7 @@ public class ListRealisateur extends AppCompatActivity {
                 long realisateur = listView.getItemIdAtPosition(position);
                 Log.d("mainActivity", "" + realisateur);
 
-                        Intent ListFilm_par_Realisateur = new Intent(getApplicationContext(), StevenSpielberg_list.class);
+                        Intent ListFilm_par_Realisateur = new Intent(getApplicationContext(), list_film_par_Realisateur.class);
                 ListFilm_par_Realisateur.putExtra("idRealisateur", realisateur);
                         startActivity(ListFilm_par_Realisateur);
                         finish();
