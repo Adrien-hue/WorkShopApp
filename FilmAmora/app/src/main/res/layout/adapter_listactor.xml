@@ -26,10 +26,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="prenom"
-                android:fontFamily="@font/sriracha"
+                android:fontFamily="@font/sourcesp"
                 android:layout_gravity="center_horizontal"
                 android:textAlignment="center"
-                android:textSize="10dp"
+                android:textSize="8dp"
                 android:textColor="@color/colorWhite"/>
             <TextView
                 android:id="@+id/item_nom"
@@ -38,10 +38,10 @@
                 android:layout_marginLeft="3dp"
                 android:layout_below="@+id/item_name"
                 android:text="nom"
-                android:fontFamily="@font/sriracha"
+                android:fontFamily="@font/sourcesp"
                 android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
-                android:textSize="10dp"
+                android:textSize="8dp"
                 android:textColor="@color/colorWhite"/>
         </LinearLayout>
 
