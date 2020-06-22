@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:fontFamily="@font/sriracha"
+                android:fontFamily="@font/sourcespb"
                 android:text="@string/rdyplayer_syno"
                 android:textAlignment="center"
                 android:textColor="@color/colorWhite"></TextView>
