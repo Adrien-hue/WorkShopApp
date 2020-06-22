@@ -72,7 +72,7 @@ public class DetailAdapter extends BaseAdapter {
 
         int id = currentItem.getIdFilm();
 
-        TextView itemTitreF = view.findViewById(R.id.item_Titre);
+        TextView itemTitreF = view.findViewById(R.id.item_TitreFilm);
         itemTitreF.setText(Titre);
 
         ImageView itemImageView = view.findViewById(R.id.item_imageId);
