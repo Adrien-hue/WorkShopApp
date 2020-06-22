@@ -96,4 +96,17 @@ public class ListFilmaVoir extends AppCompatActivity {
         startActivity(goToReal);
     }
 
+
+    public void filmAvoir(View view) {
+        Intent goToAvoir = new Intent(getApplicationContext(), ListFilmaVoir.class);
+        startActivity(goToAvoir);
+        finish();
+    }
+
+    public void listFilm(View view) {
+        Intent gotoFilm = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(gotoFilm);
+        finish();
+    }
+
 }

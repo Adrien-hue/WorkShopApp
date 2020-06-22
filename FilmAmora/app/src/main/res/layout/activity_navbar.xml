@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/les_films"
-        android:onClick="goBackFilm"
+        android:onClick="listFilm"
         android:layout_weight="1"
         android:textColor="@color/colorWhite"
         android:fontFamily="@font/sriracha"

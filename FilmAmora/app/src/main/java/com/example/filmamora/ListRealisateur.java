@@ -65,9 +65,24 @@ public class ListRealisateur extends AppCompatActivity {
         });
     }
 
-    public void goBackFilm(View view){
-        Intent goBackFilm = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(goBackFilm);
+
+
+    public void goToReal(View view) {
+        Intent goToReal = new Intent(getApplicationContext(), ListRealisateur.class);
+        startActivity(goToReal);
+    }
+
+
+    public void filmAvoir(View view) {
+        Intent goToAvoir = new Intent(getApplicationContext(), ListFilmaVoir.class);
+        startActivity(goToAvoir);
+        finish();
+    }
+
+    public void listFilm(View view) {
+        Intent gotoFilm = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(gotoFilm);
+        finish();
     }
 
 }
