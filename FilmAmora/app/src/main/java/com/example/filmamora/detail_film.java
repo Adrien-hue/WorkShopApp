@@ -41,7 +41,7 @@ public class detail_film extends AppCompatActivity {
         Log.d("IDFilm : ", "" +idFilm);
 
         DetailFilm d = c3po.getDetailsFilm(idFilm);
-        c3po.getActeur(idFilm);
+        //c3po.getActeur(idFilm);
 
 
         TextView Titre = findViewById(R.id.item_TitreFilm);
