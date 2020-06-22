@@ -1,6 +1,7 @@
 package com.example.filmamora.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,13 +22,17 @@ public class FilmAdapter extends BaseAdapter {
     private Context context;
     private List<Film> filmList;
     private LayoutInflater inflater;
+    private static final String TAG = "filmAdapter";
+
+
 
     //Constructeur
     public FilmAdapter(Context context, List<Film> filmList) {
+        this.filmList = new ArrayList<>();
         this.context = context;
-        this.filmList = filmList;
+        this.filmList.addAll(filmList);
+        Log.d(TAG, "Création Adapter");
         this.inflater = LayoutInflater.from(context);
-
     }
 
     @Override
@@ -83,7 +88,8 @@ public class FilmAdapter extends BaseAdapter {
     }
 
     public void update(List<Film> filmList){
-        this.filmList = filmList;
+        this.filmList.clear();
+        this.filmList.addAll(filmList);
         this.notifyDataSetChanged();
     }
 }

@@ -27,8 +27,9 @@ public class ListFilmaVoir extends AppCompatActivity {
     private ArrayList<Film> listFilm;
     private Button triAnnee;
     private Button triTitre;
+    private ListView listView;
     private TextView linkFilm;
-    private com.example.filmamora.Adapter.FilmAdapter FilmAdapter;
+    private com.example.filmamora.Adapter.FilmAdapter filmAdapter;
     private DBManager c3po;
 
     @Override
@@ -48,16 +49,16 @@ public class ListFilmaVoir extends AppCompatActivity {
         //List des items
         this.listFilm = c3po.getFilmaVoir();
 
-        final ListView listView = findViewById(R.id.ListFilm);
-        FilmAdapter = new FilmAdapter(this, listFilm);
-        listView.setAdapter(new FilmAdapter(this, listFilm));
+        listView = findViewById(R.id.ListFilm);
+        filmAdapter = new FilmAdapter(this, listFilm);
+        listView.setAdapter(filmAdapter);
 
         triAnnee.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
                 listFilm.sort(new FilmComparator(ProprieteFilm.ANNEE));
-                FilmAdapter.update(listFilm);
+                filmAdapter.update(listFilm);
             }
         });
 
@@ -66,7 +67,7 @@ public class ListFilmaVoir extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 listFilm.sort(new FilmComparator(ProprieteFilm.TITRE));
-                FilmAdapter.update(listFilm);
+                filmAdapter.update(listFilm);
             }
         });
 

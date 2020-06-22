@@ -29,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
     private Button triAnnee;
     private Button triTitre;
     private TextView linkFilm;
-    private FilmAdapter FilmAdapter;
+    private FilmAdapter filmAdapter;
     private DBManager c3po;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +50,21 @@ public class MainActivity extends AppCompatActivity {
         //List des items
        this.listFilm = c3po.getAllFilm();
 
-        final ListView listView = findViewById(R.id.ListFilm);
-        FilmAdapter = new FilmAdapter(this, listFilm);
-        listView.setAdapter(new FilmAdapter(this, listFilm));
+        listView = findViewById(R.id.ListFilm);
+
+        filmAdapter = new FilmAdapter(this, listFilm);
+
+
+
+        listView.setAdapter(filmAdapter);
 
         triAnnee.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
+                Log.d("onClickAnnee", "clickAnnee");
                 listFilm.sort(new FilmComparator(ProprieteFilm.ANNEE));
-                FilmAdapter.update(listFilm);
+                filmAdapter.update(listFilm);
             }
         });
 
@@ -66,8 +72,9 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
+                Log.d("onClickTitre", "clickTitre");
                 listFilm.sort(new FilmComparator(ProprieteFilm.TITRE));
-                FilmAdapter.update(listFilm);
+                filmAdapter.update(listFilm);
             }
         });
 
