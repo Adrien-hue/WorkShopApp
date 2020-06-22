@@ -1,5 +1,6 @@
 package com.example.filmamora.database;
 
+import android.app.Person;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -157,7 +158,7 @@ public class DBManager {
     }
 
     public ArrayList<Film> getFilmParReal(int Realisateur) {
-        //TODO A VERIFIER !
+        //TODO Fonctionne à ne pas toucher !
         ArrayList<Film> results = new ArrayList<>();
         String sqlQuery = "SELECT f.id, f.titre, f.annee, pers.prenom, pers.nom FROM Film f JOIN participe p ON p.id_Film = f.id JOIN personne pers ON pers.id = p.id WHERE pers.id = "+ Realisateur +";";
 

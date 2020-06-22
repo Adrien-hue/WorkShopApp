@@ -51,33 +51,42 @@ public class DetailAdapter extends BaseAdapter {
 
 
 
-        Film currentItem = (Film) getItem(i);
+        DetailFilm currentItem = (DetailFilm) getItem(i);
 
-        String itemName = currentItem.getTitre();
+        String itemTitre = currentItem.getTitre();
+
         Long itemDate = currentItem.getAnnee();
-        String prenom = currentItem.getP_prenom();
-        String nom = currentItem.getP_nom();
-        int id = currentItem.getId();
 
-        TextView itemNameView = view.findViewById(R.id.item_name);
-        itemNameView.setText(itemName);
+        String prenom = currentItem.getReal_p();
 
-        ImageView itemImageView = view.findViewById(R.id.item_icon);
+        String nom = currentItem.getReal_nom();
+
+        String synopsis = currentItem.getSynopsis();
+
+        int id = currentItem.getIdFilm();
+
+        TextView itemTitreF = view.findViewById(R.id.item_Titre);
+        itemTitreF.setText(itemTitre);
+
+        ImageView itemImageView = view.findViewById(R.id.item_imageId);
         String ressourceName = "item_" + id;
 
         int resId = context.getResources().getIdentifier(ressourceName, "drawable", context.getPackageName());
         itemImageView.setImageResource(resId);
 
 
-        TextView itemPrenom = view.findViewById(R.id.item_prenom);
+        TextView itemPrenom = view.findViewById(R.id.item_RealisateurPrenom);
         itemPrenom.setText(prenom);
 
 
-        TextView itemNom = view.findViewById(R.id.item_nom);
+        TextView itemNom = view.findViewById(R.id.item_RealisateurNom);
         itemNom.setText(nom);
 
-        TextView itemDateView = view.findViewById(R.id.item_date);
+        TextView itemDateView = view.findViewById(R.id.item_Date);
         itemDateView.setText("Sorti en " + itemDate);
+
+        TextView itemSynopsis = view.findViewById(R.id.item_synopsis);
+        itemDateView.setText(synopsis);
 
         return view;
     }
