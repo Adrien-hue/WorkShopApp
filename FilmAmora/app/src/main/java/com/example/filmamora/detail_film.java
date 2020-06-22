@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.filmamora.Adapter.ActorAdapter;
 import com.example.filmamora.Adapter.FilmAdapter;
@@ -20,11 +23,12 @@ import com.example.filmamora.database.DBManager;
 
 import java.util.ArrayList;
 
-public class detail_film extends AppCompatActivity {
+public class detail_film extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     private ArrayList<Personne> listActeurs;
     private DBManager c3po;
     private ActorAdapter ActorAdapter;
+    private int idFilm;
 
 
     @Override
@@ -36,7 +40,7 @@ public class detail_film extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         String idFi = extras.getString("idFilm");
-        int idFilm = Integer.parseInt(idFi);
+        this.idFilm = Integer.parseInt(idFi);
 
         Log.d("IDFilm : ", "" +idFilm);
 
@@ -90,11 +94,36 @@ public class detail_film extends AppCompatActivity {
         }
 
 
-
     }
 
     public void backHome(View view){
         Intent goBackFilm = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(goBackFilm);
+    }
+
+    public void add(View view) {
+        PopupMenu popup = new PopupMenu(this, view);
+        popup.setOnMenuItemClickListener(this);
+        popup.inflate(R.menu.popup_menu);
+        popup.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.item_1:
+                c3po.addListaVoir(idFilm);
+                Toast.makeText(this, "Le film a été ajouté", Toast.LENGTH_SHORT).show();
+                return true;
+
+                case R.id.item_2:
+                c3po.suppListaVoir(idFilm);
+                    Toast.makeText(this, "Le film a été supprimé", Toast.LENGTH_SHORT).show();
+                return true;
+
+            default: return false;
+
+
+        }
     }
 }

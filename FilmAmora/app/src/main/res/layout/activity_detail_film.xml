@@ -124,6 +124,7 @@
                     android:text="Synopsis"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite"></TextView>
+
                 <TextView
                     android:id="@+id/distri"
                     android:textSize="25dp"
