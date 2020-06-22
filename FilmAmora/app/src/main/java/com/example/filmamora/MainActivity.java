@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                 extras.putString("idFilm", idFilm + "");
                 detailFilms.putExtras(extras);
                 startActivity(detailFilms);
-                startActivity(detailFilms);
                 finish();
 
             }

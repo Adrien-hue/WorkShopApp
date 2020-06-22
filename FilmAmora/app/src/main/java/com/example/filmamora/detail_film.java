@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.filmamora.Adapter.ActorAdapter;
 import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.Adapter.RealAdapter;
 import com.example.filmamora.Objet.DetailFilm;
@@ -23,7 +24,7 @@ public class detail_film extends AppCompatActivity {
 
     private ArrayList<Personne> listActeurs;
     private DBManager c3po;
-    private RealAdapter RealAdapter;
+    private ActorAdapter ActorAdapter;
 
 
     @Override
@@ -64,6 +65,12 @@ public class detail_film extends AppCompatActivity {
         TextView syno = findViewById(R.id.item_synopsis);
         syno.setText(d.getSynopsis());
 
+        this.listActeurs = c3po.getActeur(idFilm);
+
+        final ListView listView = findViewById(R.id.listActeurs);
+        ActorAdapter = new ActorAdapter(this, listActeurs);
+        listView.setAdapter(new ActorAdapter(this, listActeurs));
+
         TextView note = findViewById(R.id.item_note);
 
         if(d.getaNote() == 0){
@@ -80,11 +87,7 @@ public class detail_film extends AppCompatActivity {
             critique.setText(d.getaCommentaire());
         }
 
-        this.listActeurs = c3po.getActeur(idFilm);
 
-        final ListView listView = findViewById(R.id.listActeurs);
-        RealAdapter = new RealAdapter(this, listActeurs);
-        listView.setAdapter(new RealAdapter(this, listActeurs));
 
 
 
@@ -95,7 +98,7 @@ public class detail_film extends AppCompatActivity {
 
     }
 
-    public void goBackFilm(View view){
+    public void backHome(View view){
         Intent goBackFilm = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(goBackFilm);
     }

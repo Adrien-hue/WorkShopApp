@@ -131,24 +131,23 @@
                     android:fontFamily="@font/niconne"
                     android:text="Distribution"></TextView>
 
-                <LinearLayout
-                    android:id="@+id/list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
+                <ScrollView
+                    android:id="@+id/scrool"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
                 <ListView
                     android:id="@+id/listActeurs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </ListView>
-
-                </LinearLayout>
+                </ScrollView>
 
 
 
                 <TextView
                     android:id="@+id/note"
-                    android:layout_below="@id/listActeurs"
+                    android:layout_below="@id/scrool"
                     android:textSize="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
