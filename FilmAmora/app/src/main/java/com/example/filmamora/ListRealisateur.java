@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.Adapter.RealAdapter;
 import com.example.filmamora.Objet.Realisateur;
 import com.example.filmamora.database.DBManager;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class ListRealisateur extends AppCompatActivity {
 
     private TextView parReal;
+    private RealAdapter RealAdapter;
     private ArrayList<Realisateur> listRealisateur;
     private DBManager c3po;
 
@@ -29,14 +31,19 @@ public class ListRealisateur extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_realisateur);
 
+        c3po = new DBManager(this);
+
         //Permet de souligner le text pour montrer où il se trouve
 
         this.parReal = findViewById(R.id.parreal);
         parReal.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
 
-        listRealisateur = c3po.getAllRealisateur();
+        //list realisateur
+        this.listRealisateur = c3po.getAllRealisateur();
 
         final ListView listView = findViewById(R.id.ListRealisateur);
+
+        RealAdapter = new RealAdapter(this, listRealisateur);
 
         listView.setAdapter(new RealAdapter(this, listRealisateur));
 
