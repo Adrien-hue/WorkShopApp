@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FilmAdapter extends BaseAdapter {
@@ -23,8 +24,9 @@ public class FilmAdapter extends BaseAdapter {
 
     //Constructeur
     public FilmAdapter(Context context, List<Film> filmList) {
+        this.filmList = new ArrayList<>();
         this.context = context;
-        this.filmList = filmList;
+        this.filmList.addAll(filmList);
         this.inflater = LayoutInflater.from(context);
 
     }

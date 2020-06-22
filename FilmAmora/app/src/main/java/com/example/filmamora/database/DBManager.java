@@ -57,8 +57,8 @@ public class DBManager {
     }
 
 
-    public ArrayList<DetailFilm> getDetailsFilm(int idFilm){
-        ArrayList<DetailFilm> results = new ArrayList<>();
+    public DetailFilm getDetailsFilm(int idFilm){
+        DetailFilm results = null;
         String sqlQuery = "SELECT f.id, f.titre, f.annee,pe.prenom, pe.nom,f.synopsis, a.note, a.commentaire FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film LEFT JOIN Participe pa ON pa.id_Film = f.id JOIN Personne pe ON pe.id = pa.id WHERE pa.id_Film=" + idFilm +" AND pa.id_role=2;";
         //Log.d(TAG, sqlQuery);
 
@@ -69,12 +69,13 @@ public class DBManager {
         Cursor c = db.rawQuery(sqlQuery, null);
 
         //Init cursor to first row
+
         if(!c.moveToFirst()){
             // Log.v(TAG, "There are no products in the database");
         }else{
             do{
                 //Add new film to list
-                results.add(new DetailFilm(c.getInt(0), c.getString(1), c.getLong(2), c.getString(3), c.getString(4), c.getString(5), c.getInt(6), c.getString(7)));
+                results = new DetailFilm(c.getInt(0), c.getString(1), c.getLong(2), c.getString(3), c.getString(4), c.getString(5), c.getInt(6), c.getString(7));
             }while(c.moveToNext());
         }
 
