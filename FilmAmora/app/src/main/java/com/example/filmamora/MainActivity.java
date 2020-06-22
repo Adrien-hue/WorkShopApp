@@ -10,27 +10,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.filmamora.Adapter.FilmAdapter;
-import com.example.filmamora.DetailsFilm.Interstellar;
-import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
-import com.example.filmamora.DetailsFilm.Valerian;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.Objet.FilmComparator;
 import com.example.filmamora.Objet.ProprieteFilm;
 import com.example.filmamora.database.DBManager;
 
-import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 

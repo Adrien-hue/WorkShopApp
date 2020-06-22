@@ -19,13 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetailsFilm.Valerian"
-            android:parentActivityName=".MainActivity" />
-        <activity
             android:name=".ListRealisateur"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".DetailsFilm.ReadyPlayerOne"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DetailsFilm.Interstellar"

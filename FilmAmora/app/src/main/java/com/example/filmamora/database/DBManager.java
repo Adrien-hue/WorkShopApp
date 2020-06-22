@@ -1,5 +1,6 @@
 package com.example.filmamora.database;
 
+import android.app.Person;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -58,7 +59,7 @@ public class DBManager {
     public ArrayList<Film> getDetailsFilm( int id_Film){
         ArrayList<Film> results = new ArrayList<>();
         String sqlQuery = "SELECT f.id, f.titre, f.annee,pe.prenom, pe.nom,f.synopsis, a.note, a.commentaire FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film LEFT JOIN Participe pa ON pa.id_Film = f.id JOIN Personne pe ON pe.id = pa.id WHERE pa.id_role=2;";
-        String sqlQUery2= "SELECT pe.id, pe.prenom,pe.nom FROM Personne pe JOIN Participe pa ON pa.id = pe.id WHERE pa.id_Role = 1 AND pa.id_Film=" + id_Film +";";
+
         //Log.d(TAG, sqlQuery);
 
         //Get database
@@ -81,8 +82,8 @@ public class DBManager {
         return results;
     }
 
-    public ArrayList<Realisateur> getAllActeur(int idFilm){
-        ArrayList<Realisateur> results = new ArrayList<>();
+    public ArrayList<Personne> getAllActeur(int idFilm){
+        ArrayList<Personne> results = new ArrayList<>();
         String sqlQuery = "SELECT per.id, per.nom, per.prenom FROM Personne per JOIN Participe par ON per.id = par.id WHERE par.id_Film = "+ idFilm +" AND par.id_Role = 1;";
         //Log.d(TAG, sqlQuery);
 
@@ -98,7 +99,7 @@ public class DBManager {
         }else{
             do{
                 //Add new person to list
-                results.add(new Realisateur(c.getInt(0), c.getString(1), c.getString(2)));
+                results.add(new Personne(c.getInt(0), c.getString(1), c.getString(2)));
             }while(c.moveToNext());
         }
 
@@ -157,7 +158,7 @@ public class DBManager {
     }
 
     public ArrayList<Film> getFilmParReal(int Realisateur) {
-        //TODO A VERIFIER !
+        //TODO Fonctionne à ne pas toucher !
         ArrayList<Film> results = new ArrayList<>();
         String sqlQuery = "SELECT f.id, f.titre, f.annee, pers.prenom, pers.nom FROM Film f JOIN participe p ON p.id_Film = f.id JOIN personne pers ON pers.id = p.id WHERE pers.id = "+ Realisateur +";";
 
