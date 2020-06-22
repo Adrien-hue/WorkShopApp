@@ -31,6 +31,47 @@ public class DBManager {
         db.execSQL(sqlQuery);
     }
 
+    public void addListaVoir(int idFilm){
+        db = r2d2.getWritableDatabase();
+        String sqlQuery = "UPDATE Film SET aVoir = '1' WHERE id = "+ idFilm +";";;
+        //Log.d(TAG, sqlQuery);
+        db.execSQL(sqlQuery);
+    }
+
+    public void suppListaVoir(int idFilm){
+        db = r2d2.getWritableDatabase();
+        String sqlQuery = "UPDATE Film SET aVoir = '0' WHERE id = "+ idFilm +";";;
+        //Log.d(TAG, sqlQuery);
+        db.execSQL(sqlQuery);
+    }
+
+    public ArrayList<Film> getFilmaVoir(){
+        ArrayList<Film> results = new ArrayList<>();
+        String sqlQuery = "SELECT f.id, f.titre, f.annee, pe.prenom, pe.nom, f.aVoir FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film LEFT JOIN Participe pa ON pa.id_Film = f.id JOIN Personne pe ON pe.id = pa.id WHERE pa.id_role=2 AND aVoir = 1;";
+
+        //Log.d(TAG, sqlQuery);
+
+        //Get database
+        db = r2d2.getReadableDatabase();
+
+        //Execute query and get response
+        Cursor c = db.rawQuery(sqlQuery, null);
+
+        //Init cursor to first row
+        if(!c.moveToFirst()){
+            // Log.v(TAG, "There are no products in the database");
+        }else{
+            do{
+                //Add new film to list
+                results.add(new Film(c.getInt(0), c.getString(1), c.getLong(2), c.getString(3), c.getString(4), c.getInt(5)));
+            }while(c.moveToNext());
+        }
+
+        c.close();
+        return results;
+    }
+
+
     public ArrayList<Film> getAllFilm(){
         ArrayList<Film> results = new ArrayList<>();
         String sqlQuery = "SELECT f.id, f.titre, f.annee, pe.prenom, pe.nom, f.aVoir FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film LEFT JOIN Participe pa ON pa.id_Film = f.id JOIN Personne pe ON pe.id = pa.id WHERE pa.id_role=2;";

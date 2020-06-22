@@ -3,7 +3,6 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="0dp"
-
     >
 
     <RelativeLayout
@@ -16,7 +15,6 @@
 
         <LinearLayout
             android:id="@+id/real"
-            android:layout_below="@+id/item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -34,7 +32,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
-                android:layout_below="@+id/item_name"
                 android:text="nom"
                 android:fontFamily="@font/sriracha"
                 android:textSize="20dp"
