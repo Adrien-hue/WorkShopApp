@@ -11,9 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.filmamora.Adapter.FilmAdapter;
 import com.example.filmamora.Adapter.RealAdapter;
-import com.example.filmamora.Objet.Realisateur;
+import com.example.filmamora.Objet.Personne;
 import com.example.filmamora.database.DBManager;
 
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ public class ListRealisateur extends AppCompatActivity {
 
     private TextView parReal;
     private RealAdapter RealAdapter;
-    private ArrayList<Realisateur> listRealisateur;
+    private ArrayList<Personne> listRealisateur;
     private DBManager c3po;
 
 

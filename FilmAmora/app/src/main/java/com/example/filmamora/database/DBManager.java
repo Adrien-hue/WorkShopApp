@@ -3,10 +3,9 @@ package com.example.filmamora.database;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.example.filmamora.Objet.Film;
-import com.example.filmamora.Objet.Realisateur;
+import com.example.filmamora.Objet.Personne;
 
 import java.util.ArrayList;
 
@@ -55,8 +54,8 @@ public class DBManager {
         return results;
     }
 
-    public ArrayList<Realisateur> getAllActeur(int idFilm){
-        ArrayList<Realisateur> results = new ArrayList<>();
+    public ArrayList<Personne> getAllActeur(int idFilm){
+        ArrayList<Personne> results = new ArrayList<>();
         String sqlQuery = "SELECT per.id, per.nom, per.prenom FROM Personne per JOIN Participe par ON per.id = par.id WHERE par.id_Film = "+ idFilm +" AND par.id_Role = 1;";
         //Log.d(TAG, sqlQuery);
 
@@ -72,7 +71,7 @@ public class DBManager {
         }else{
             do{
                 //Add new person to list
-                results.add(new Realisateur(c.getInt(1), c.getString(2), c.getString(3)));
+                results.add(new Personne(c.getInt(1), c.getString(2), c.getString(3)));
             }while(c.moveToNext());
         }
 
@@ -105,8 +104,8 @@ public class DBManager {
         return results;
     }
 
-    public ArrayList<Realisateur> getAllRealisateur() {
-        ArrayList<Realisateur> results = new ArrayList<>();
+    public ArrayList<Personne> getAllRealisateur() {
+        ArrayList<Personne> results = new ArrayList<>();
         String sqlQuery = "SELECT DISTINCT per.id, per.prenom, per.nom FROM Personne per JOIN Participe p ON per.id = p.id WHERE p.id_Role == 2;";
         //Log.d(TAG, sqlQuery);
 
@@ -122,7 +121,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                results.add(new Realisateur(c.getInt(0), c.getString(1), c.getString(2)));
+                results.add(new Personne(c.getInt(0), c.getString(1), c.getString(2)));
             }while(c.moveToNext());
         }
 

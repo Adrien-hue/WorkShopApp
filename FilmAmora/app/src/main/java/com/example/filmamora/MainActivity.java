@@ -86,29 +86,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                long film = listView.getItemIdAtPosition(position);
-                Log.d("mainActivity", ""+ film);
+                long idFilm = listView.getItemIdAtPosition(position);
+                Log.d("mainActivity", ""+ idFilm);
 
-                switch ((int) film){
-                    case 1:
-                        Intent interstellar = new Intent(getApplicationContext(), Interstellar.class);
-                        startActivity(interstellar);
-                        finish();
-                        break;
+                Intent detailFilms = new Intent(getApplicationContext(), detail_film.class);
+                Bundle extras = new Bundle();
+                extras.putString("idFilm", idFilm + "");
+                detailFilms.putExtras(extras);
+                startActivity(detailFilms);
+                startActivity(detailFilms);
+                finish();
 
-                    case 2:
-                        Intent Steven = new Intent(getApplicationContext(), ReadyPlayerOne.class);
-                        startActivity(Steven);
-                        finish();
-                        break;
-                    case 3:
-                        Intent valerian = new Intent(getApplicationContext(), Valerian.class);
-                        startActivity(valerian);
-                        finish();
-                    default:
-                        break;
             }
-            }
+
         });
     }
 

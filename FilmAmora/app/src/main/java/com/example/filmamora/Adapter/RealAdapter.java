@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.filmamora.Objet.Realisateur;
+import com.example.filmamora.Objet.Personne;
 import com.example.filmamora.R;
 
 import java.util.List;
@@ -17,13 +17,13 @@ public class RealAdapter extends BaseAdapter {
     //Fields
 
     private Context context;
-    private List<Realisateur> listRealisateur;
+    private List<Personne> listRealisateur;
     private LayoutInflater inflater;
 
     //Constructeur
-    public RealAdapter(Context context, List<Realisateur> listRealisateur) {
+    public RealAdapter(Context context, List<Personne> listPersonne) {
         this.context = context;
-        this.listRealisateur = listRealisateur;
+        this.listRealisateur = listPersonne;
         this.inflater = LayoutInflater.from(context);
 
     }
@@ -47,7 +47,7 @@ public class RealAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = inflater.inflate(R.layout.adapter_listrealisateur, null);
 
-        Realisateur currentItem = (Realisateur) getItem(i);
+        Personne currentItem = (Personne) getItem(i);
 
         String itemPrenom = currentItem.getPrenom();
 

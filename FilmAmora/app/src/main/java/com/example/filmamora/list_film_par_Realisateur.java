@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -70,9 +71,13 @@ public class list_film_par_Realisateur extends AppCompatActivity {
         FilmAdapter = new FilmAdapter(this, listFilm);
         listView.setAdapter(new FilmAdapter(this, listFilm));
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
 
-
+            }
+        });
 
     }
 }

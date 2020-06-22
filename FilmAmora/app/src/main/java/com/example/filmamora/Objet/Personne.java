@@ -1,11 +1,12 @@
 package com.example.filmamora.Objet;
 
-class Acteur {
+public class Personne {
     private int id;
     private String nom;
     private String prenom;
 
-    public Acteur(int id, String nom, String prenom) {
+
+    public Personne(int id, String prenom, String nom) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
