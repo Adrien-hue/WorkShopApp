@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:text="prenom"
                 android:fontFamily="@font/sriracha"
-                android:textSize="12dp"
+                android:textSize="20dp"
                 android:textColor="@color/colorWhite"/>
             <TextView
                 android:id="@+id/item_nom"
@@ -37,7 +37,7 @@
                 android:layout_below="@+id/item_name"
                 android:text="nom"
                 android:fontFamily="@font/sriracha"
-                android:textSize="12dp"
+                android:textSize="20dp"
                 android:textColor="@color/colorWhite"/>
         </LinearLayout>
 
