@@ -55,7 +55,10 @@ public class ListRealisateur extends AppCompatActivity {
                 Log.d("mainActivity", "" + realisateur);
 
                         Intent ListFilm_par_Realisateur = new Intent(getApplicationContext(), list_film_par_Realisateur.class);
-                ListFilm_par_Realisateur.putExtra("idRealisateur", realisateur);
+                        Bundle extras = new Bundle();
+                        extras.putString("idRealisateur", realisateur + "");
+                        ListFilm_par_Realisateur.putExtras(extras);
+                        startActivity(ListFilm_par_Realisateur);
                         startActivity(ListFilm_par_Realisateur);
                         finish();
 

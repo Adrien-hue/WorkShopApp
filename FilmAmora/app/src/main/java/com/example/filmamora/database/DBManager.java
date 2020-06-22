@@ -133,7 +133,7 @@ public class DBManager {
     public ArrayList<Film> getFilmParReal(int Realisateur) {
         //TODO A VERIFIER !
         ArrayList<Film> results = new ArrayList<>();
-        String sqlQuery = "SELECT * FROM Film f JOIN participe p ON p.id_Film = f.id JOIN personne pers ON pers.id = p.id WHERE pers.id = "+ Realisateur +";";
+        String sqlQuery = "SELECT f.id, f.titre, f.annee, pers.prenom, pers.nom FROM Film f JOIN participe p ON p.id_Film = f.id JOIN personne pers ON pers.id = p.id WHERE pers.id = "+ Realisateur +";";
 
         //Log.d(TAG, sqlQuery);
 
@@ -149,7 +149,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                //results.add(new Film(c.getString(1), c.getInt(2), c.getString(3),c.getLong(4)));
+                results.add(new Film(c.getInt(0), c.getString(1), c.getLong(2), c.getString(3), c.getString(4)));
             }while(c.moveToNext());
         }
 

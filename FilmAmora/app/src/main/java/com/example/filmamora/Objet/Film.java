@@ -39,6 +39,14 @@ public class Film{
         this.aVoir = aVoir;
     }
 
+    public Film(int id, String titre, Long annee, String p_prenom, String p_nom) {
+        this.id = id;
+        this.titre = titre;
+        this.annee = annee;
+        this.p_prenom = p_prenom;
+        this.p_nom = p_nom;
+    }
+
     public Film(int id, String titre, Long annee, String synopsis, int aVoir, int note, String critique) {
         this.id = id;
         this.titre = titre;

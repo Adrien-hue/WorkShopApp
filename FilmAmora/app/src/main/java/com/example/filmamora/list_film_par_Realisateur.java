@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -33,6 +34,8 @@ public class list_film_par_Realisateur extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_film_par__realisateur);
 
+        c3po = new DBManager(this);
+
         this.triAnnee = findViewById(R.id.btnTri2);
         this.triTitre = findViewById(R.id.btnTri1);
 
@@ -54,21 +57,18 @@ public class list_film_par_Realisateur extends AppCompatActivity {
             }
         });
 
-        Intent intent = getIntent();
+        Bundle extras = getIntent().getExtras();
+        String idRealisateur = extras.getString("idRealisateur");
+        int idReal = Integer.parseInt(idRealisateur);
 
-        if (intent != null){
+        Log.d("IDRealisateur : ", "" +idReal);
 
-            if (intent.hasExtra("idRealisateur")){
-                int idRealisateur = intent.getIntExtra("idRealisateur", 0);
-                this.listFilm = c3po.getFilmParReal(idRealisateur);
 
-                final ListView listView = findViewById(R.id.ListFilm);
-                FilmAdapter = new FilmAdapter(this, listFilm);
-                listView.setAdapter(new FilmAdapter(this, listFilm));
+        this.listFilm = c3po.getFilmParReal(idReal);
 
-            }
-
-        }
+        final ListView listView = findViewById(R.id.ListFilm);
+        FilmAdapter = new FilmAdapter(this, listFilm);
+        listView.setAdapter(new FilmAdapter(this, listFilm));
 
 
 
