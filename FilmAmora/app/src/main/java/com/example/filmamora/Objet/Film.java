@@ -30,7 +30,7 @@ public class Film{
         Acteurs = acteurs;
     }
 
-    public Film(int id, String titre, Long annee, String p_prenom, String p_nom) {
+    public Film(int id, String titre, Long annee, String p_prenom, String p_nom, int aVoir) {
         this.id = id;
         this.titre = titre;
         this.annee = annee;

@@ -24,14 +24,14 @@ public class DBManager {
 
     public void addNewCritiqueToDB(int idFilm, int note, String critique){
         db = r2d2.getWritableDatabase();
-        String sqlQuery = "INSERT INTO Avis (note, critique, id_Film) VALUES (" + note + ",'"+ critique+"', "+ idFilm +");";
+       // String sqlQuery = "INSERT INTO Avis (note, critique, id_Film) VALUES (" + note + ",'"+ critique+"', "+ idFilm +");";
         //Log.d(TAG, sqlQuery);
-        db.execSQL(sqlQuery);
+        //db.execSQL(sqlQuery);
     }
 
     public ArrayList<Film> getAllFilm(){
         ArrayList<Film> results = new ArrayList<>();
-        String sqlQuery = "SELECT f.id, f.titre, f.annee,f.aVoir, pe.prenom, pe.nom FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film JOIN Participe pa ON pa.id_Film = f.id JOIN Personne pe ON pe.id = pa.id WHERE pa.id_role=2;";
+        String sqlQuery = "SELECT f.id, f.titre, f.annee, pe.prenom,f.aVoir, pe.nom FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film LEFT JOIN Participe pa ON pa.id_Film = f.id JOIN Personne pe ON pe.id = pa.id WHERE pa.id_role=2;";
 
         //Log.d(TAG, sqlQuery);
 
@@ -47,7 +47,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                results.add(new Film(c.getInt(1), c.getString(2), c.getLong(3), c.getString(4), c.getString(5)));
+                results.add(new Film(c.getInt(0), c.getString(1), c.getLong(2), c.getString(3), c.getString(4), c.getInt(5)));
             }while(c.moveToNext());
         }
 
@@ -107,7 +107,7 @@ public class DBManager {
 
     public ArrayList<Realisateur> getAllRealisateur() {
         ArrayList<Realisateur> results = new ArrayList<>();
-        String sqlQuery = "SELECT DISTINCT p.id, per.nom, per.prenom FROM Personne per JOIN Participe p ON per.id = p.id WHERE p.id_Role == 2;";
+        String sqlQuery = "SELECT p.id, per.nom, per.prenom FROM Personne per JOIN Participe p ON per.id = p.id WHERE p.id_Role == 2;";
         //Log.d(TAG, sqlQuery);
 
         //Get database
@@ -122,7 +122,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                results.add(new Realisateur(c.getInt(1), c.getString(2), c.getString(3)));
+                results.add(new Realisateur(c.getInt(0), c.getString(1), c.getString(2)));
             }while(c.moveToNext());
         }
 
