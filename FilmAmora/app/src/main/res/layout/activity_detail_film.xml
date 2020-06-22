@@ -6,43 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".detail_film">
 
-
-    <LinearLayout
-        android:id="@id/navback"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <include
-        android:id="@+id/navback"
-        layout="@layout/activity_navback"
-        ></include>
-    </LinearLayout>
+        <include
+            layout="@layout/activity_navback"
+            android:layout_below="@+id/text"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent">
+        </include>
 
-
-
-    </LinearLayout>
-
-
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/menu">
 
             <ListView
                 android:id="@+id/detailList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                ></ListView>
+                android:layout_height="wrap_content">
 
+            </ListView>
         </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,29 +48,45 @@ public class DetailAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view = inflater.inflate(R.layout.adapter_list, null);
+        view = inflater.inflate(R.layout.adapter_detail_film, null);
 
 
-
+    //GETTER
         DetailFilm currentItem = (DetailFilm) getItem(i);
 
         String Titre = currentItem.getTitre();
 
-        Log.d("Le titre du film est : ", Titre);
+        Log.d("Detail", Titre);
 
         Long itemDate = currentItem.getAnnee();
 
-        Log.d("La Date du film est : ", "" + itemDate);
+        Log.d("Detail", "" + itemDate);
 
         String prenom = currentItem.getReal_p();
 
-        Log.d("Le prenomdu film est : ", prenom);
+        Log.d("Detail", prenom);
 
         String nom = currentItem.getReal_nom();
 
+        Log.d("Detail", nom);
+
         String synopsis = currentItem.getSynopsis();
 
+        Log.d("Detail", synopsis);
+
         int id = currentItem.getIdFilm();
+
+        Log.d("Detail", "" + id);
+
+        int note = currentItem.getaNote();
+
+        Log.d("Detail", "" + note);
+
+        String commentaire = currentItem.getaCommentaire();
+
+
+
+        //Remplacement
 
         TextView itemTitreF = view.findViewById(R.id.item_TitreFilm);
         itemTitreF.setText(Titre);
@@ -94,6 +110,22 @@ public class DetailAdapter extends BaseAdapter {
 
         TextView itemSynopsis = view.findViewById(R.id.item_synopsis);
         itemSynopsis.setText(synopsis);
+
+        TextView Note = view.findViewById(R.id.item_note);
+
+        TextView Commentaire = view.findViewById(R.id.item_critique);
+
+        if(note == 0){
+            Note.setText("Pas de note");
+        }else {
+            Note.setText(note + "/10");
+        }
+
+        if(commentaire == null){
+            Commentaire.setText("Pas de commentaire");
+        }else {
+            Commentaire.setText(commentaire);
+        }
 
         return view;
     }

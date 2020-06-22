@@ -41,10 +41,5 @@ public class detail_film extends AppCompatActivity {
         detailAdapter = new DetailAdapter(this, listDetail);
         listView.setAdapter(new DetailAdapter(this, listDetail));
 
-
-
-
-
-
     }
 }

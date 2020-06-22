@@ -25,6 +25,15 @@ public class DetailFilm {
         this.aCommentaire = aCommentaire;
     }
 
+    public DetailFilm(int idFilm, String titre, Long annee, String real_p, String real_nom, String synopsis) {
+        this.idFilm = idFilm;
+        this.titre = titre;
+        this.annee = annee;
+        this.real_p = real_p;
+        this.real_nom = real_nom;
+        this.synopsis = synopsis;
+
+    }
 
     public int getIdFilm() {
         return idFilm;

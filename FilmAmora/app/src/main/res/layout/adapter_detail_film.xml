@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -90,6 +91,7 @@
             android:textAlignment="center"
             android:textColor="@color/colorWhite"></TextView>
         <TextView
+            android:id="@+id/distri"
             android:textSize="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -101,7 +103,58 @@
             android:text="Distribution"></TextView>
 
 
+
+        <TextView
+            android:id="@+id/note"
+            android:textSize="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/niconne"
+            android:text="Note"></TextView>
+
+        <TextView
+            android:id="@+id/item_note"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="note"
+            android:fontFamily="@font/sriracha"
+            android:textColor="@color/colorWhite"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/critique"
+            android:textSize="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/niconne"
+            android:text="Critique"></TextView>
+
+        <TextView
+            android:id="@+id/item_critique"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="note"
+            android:fontFamily="@font/sriracha"
+            android:textColor="@color/colorWhite"
+            ></TextView>
+
+
     </LinearLayout>
+
 
 
 </LinearLayout>
