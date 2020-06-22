@@ -24,9 +24,8 @@ public class FilmAdapter extends BaseAdapter {
 
     //Constructeur
     public FilmAdapter(Context context, List<Film> filmList) {
-        this.filmList = new ArrayList<>();
         this.context = context;
-        this.filmList.addAll(filmList);
+        this.filmList = filmList;
         this.inflater = LayoutInflater.from(context);
 
     }
