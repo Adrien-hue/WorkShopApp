@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.filmamora.Objet.DetailFilm;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.Objet.Personne;
 
@@ -55,8 +56,8 @@ public class DBManager {
     }
 
 
-    public ArrayList<Film> getDetailsFilm( int id_Film){
-        ArrayList<Film> results = new ArrayList<>();
+    public ArrayList<DetailFilm> getDetailsFilm(){
+        ArrayList<DetailFilm> results = new ArrayList<>();
         String sqlQuery = "SELECT f.id, f.titre, f.annee,pe.prenom, pe.nom,f.synopsis, a.note, a.commentaire FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film LEFT JOIN Participe pa ON pa.id_Film = f.id JOIN Personne pe ON pe.id = pa.id WHERE pa.id_role=2;";
         //Log.d(TAG, sqlQuery);
 
@@ -72,7 +73,7 @@ public class DBManager {
         }else{
             do{
                 //Add new film to list
-                results.add(new Film(c.getInt(0), c.getString(1), c.getLong(2), c.getString(3), c.getString(4), c.getInt(5)));
+                results.add(new DetailFilm(c.getInt(0), c.getString(1), c.getLong(2), c.getString(3), c.getString(4), c.getString(5), c.getInt(6), c.getString(7)));
             }while(c.moveToNext());
         }
 
