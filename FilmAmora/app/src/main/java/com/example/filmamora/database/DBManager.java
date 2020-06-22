@@ -24,9 +24,9 @@ public class DBManager {
 
     public void addNewCritiqueToDB(int idFilm, int note, String critique){
         db = r2d2.getWritableDatabase();
-       // String sqlQuery = "INSERT INTO Avis (note, critique, id_Film) VALUES (" + note + ",'"+ critique+"', "+ idFilm +");";
+        String sqlQuery = "INSERT INTO Avis (note, critique, id_Film) VALUES (" + note + ",'"+ critique+"', "+ idFilm +");";
         //Log.d(TAG, sqlQuery);
-        //db.execSQL(sqlQuery);
+        db.execSQL(sqlQuery);
     }
 
     public ArrayList<Film> getAllFilm(){
@@ -72,7 +72,7 @@ public class DBManager {
         }else{
             do{
                 //Add new person to list
-                results.add(new Realisateur(c.getInt(1), c.getString(2), c.getString(3)));
+                results.add(new Realisateur(c.getInt(0), c.getString(1), c.getString(2)));
             }while(c.moveToNext());
         }
 
