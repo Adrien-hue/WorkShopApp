@@ -1,6 +1,7 @@
 package com.example.filmamora.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,11 +54,17 @@ public class DetailAdapter extends BaseAdapter {
 
         DetailFilm currentItem = (DetailFilm) getItem(i);
 
-        String itemTitre = currentItem.getTitre();
+        String Titre = currentItem.getTitre();
+
+        Log.d("Le titre du film est : ", Titre);
 
         Long itemDate = currentItem.getAnnee();
 
+        Log.d("La Date du film est : ", "" + itemDate);
+
         String prenom = currentItem.getReal_p();
+
+        Log.d("Le prenomdu film est : ", prenom);
 
         String nom = currentItem.getReal_nom();
 
@@ -66,7 +73,7 @@ public class DetailAdapter extends BaseAdapter {
         int id = currentItem.getIdFilm();
 
         TextView itemTitreF = view.findViewById(R.id.item_Titre);
-        itemTitreF.setText(itemTitre);
+        itemTitreF.setText(Titre);
 
         ImageView itemImageView = view.findViewById(R.id.item_imageId);
         String ressourceName = "item_" + id;
@@ -86,7 +93,7 @@ public class DetailAdapter extends BaseAdapter {
         itemDateView.setText("Sorti en " + itemDate);
 
         TextView itemSynopsis = view.findViewById(R.id.item_synopsis);
-        itemDateView.setText(synopsis);
+        itemSynopsis.setText(synopsis);
 
         return view;
     }
