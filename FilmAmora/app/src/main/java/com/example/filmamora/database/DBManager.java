@@ -86,7 +86,7 @@ public class DBManager {
 
     public ArrayList<Personne> getActeur(int idFilm){
         ArrayList<Personne> results = new ArrayList<>();
-        String sqlQuery = "SELECT per.id, per.nom, per.prenom FROM Personne per JOIN Participe par ON per.id = par.id WHERE par.id_Film = "+ idFilm +" AND par.id_Role = 1;";
+        String sqlQuery = "SELECT per.id, per.prenom, per.nom FROM Personne per JOIN Participe par ON per.id = par.id WHERE par.id_Film = "+ idFilm +" AND par.id_Role = 1;";
         //Log.d(TAG, sqlQuery);
 
         //Get database

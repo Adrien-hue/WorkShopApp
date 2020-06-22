@@ -75,8 +75,18 @@ public class list_film_par_Realisateur extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
+                long idFilm = listView.getItemIdAtPosition(position);
+                Log.d("mainActivity", ""+ idFilm);
+
+                Intent detailFilms = new Intent(getApplicationContext(), detail_film.class);
+                Bundle extras = new Bundle();
+                extras.putString("idFilm", idFilm + "");
+                detailFilms.putExtras(extras);
+                startActivity(detailFilms);
+                finish();
 
             }
+
         });
 
     }

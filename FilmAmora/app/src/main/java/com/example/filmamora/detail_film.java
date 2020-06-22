@@ -65,9 +65,11 @@ public class detail_film extends AppCompatActivity {
         TextView syno = findViewById(R.id.item_synopsis);
         syno.setText(d.getSynopsis());
 
+        //List Acteurs
+
         this.listActeurs = c3po.getActeur(idFilm);
 
-        final ListView listView = findViewById(R.id.listActeurs);
+        final ListView listView = findViewById(R.id.distribution);
         ActorAdapter = new ActorAdapter(this, listActeurs);
         listView.setAdapter(new ActorAdapter(this, listActeurs));
 
@@ -86,6 +88,7 @@ public class detail_film extends AppCompatActivity {
         }else {
             critique.setText(d.getaCommentaire());
         }
+
 
 
     }
