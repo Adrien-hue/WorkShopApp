@@ -6,7 +6,7 @@ public class Realisateur {
     private String prenom;
 
 
-    public Realisateur(int id, String nom, String prenom) {
+    public Realisateur(int id, String prenom, String nom) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
