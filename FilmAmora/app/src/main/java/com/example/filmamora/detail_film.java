@@ -88,14 +88,6 @@ public class detail_film extends AppCompatActivity {
         }
 
 
-
-
-
-
-
-
-
-
     }
 
     public void backHome(View view){
