@@ -103,4 +103,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(goToAvoir);
         finish();
     }
+
+    public void listFilm(View view) {
+        Intent gotoFilm = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(gotoFilm);
+        finish();
+    }
 }
