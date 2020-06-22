@@ -24,9 +24,9 @@ public class DBManager {
 
     public void addNewCritiqueToDB(int idFilm, int note, String critique){
         db = r2d2.getWritableDatabase();
-       // String sqlQuery = "INSERT INTO Avis (note, critique, id_Film) VALUES (" + note + ",'"+ critique+"', "+ idFilm +");";
+        String sqlQuery = "INSERT INTO Avis (note, critique, id_Film) VALUES (" + note + ",'"+ critique+"', "+ idFilm +");";
         //Log.d(TAG, sqlQuery);
-        //db.execSQL(sqlQuery);
+        db.execSQL(sqlQuery);
     }
 
     public ArrayList<Film> getAllFilm(){
@@ -55,6 +55,33 @@ public class DBManager {
         return results;
     }
 
+
+    public ArrayList<Film> getDetailsFilm( int id_Film){
+        ArrayList<Film> results = new ArrayList<>();
+        String sqlQuery = "SELECT f.id, f.titre, f.annee,pe.prenom, pe.nom,f.synopsis, a.note, a.commentaire FROM Film f LEFT JOIN Avis a ON f.id = a.id_Film LEFT JOIN Participe pa ON pa.id_Film = f.id JOIN Personne pe ON pe.id = pa.id WHERE pa.id_role=2;";
+        String sqlQUery2= "SELECT pe.id, pe.prenom,pe.nom FROM Personne pe JOIN Participe pa ON pa.id = pe.id WHERE pa.id_Role = 1 AND pa.id_Film=" + id_Film +";";
+        //Log.d(TAG, sqlQuery);
+
+        //Get database
+        db = r2d2.getReadableDatabase();
+
+        //Execute query and get response
+        Cursor c = db.rawQuery(sqlQuery, null);
+
+        //Init cursor to first row
+        if(!c.moveToFirst()){
+            // Log.v(TAG, "There are no products in the database");
+        }else{
+            do{
+                //Add new film to list
+                results.add(new Film(c.getInt(0), c.getString(1), c.getLong(2), c.getString(3), c.getString(4), c.getInt(5)));
+            }while(c.moveToNext());
+        }
+
+        c.close();
+        return results;
+    }
+
     public ArrayList<Realisateur> getAllActeur(int idFilm){
         ArrayList<Realisateur> results = new ArrayList<>();
         String sqlQuery = "SELECT per.id, per.nom, per.prenom FROM Personne per JOIN Participe par ON per.id = par.id WHERE par.id_Film = "+ idFilm +" AND par.id_Role = 1;";
@@ -72,7 +99,7 @@ public class DBManager {
         }else{
             do{
                 //Add new person to list
-                results.add(new Realisateur(c.getInt(1), c.getString(2), c.getString(3)));
+                results.add(new Realisateur(c.getInt(0), c.getString(1), c.getString(2)));
             }while(c.moveToNext());
         }
 
