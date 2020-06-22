@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ListView;
 
 import com.example.filmamora.Adapter.DetailAdapter;
 import com.example.filmamora.Adapter.FilmAdapter;
@@ -34,6 +35,11 @@ public class detail_film extends AppCompatActivity {
         Log.d("IDFilm : ", "" +idFilm);
 
         this.listDetail = c3po.getDetailsFilm(idFilm);
+
+        final ListView listView = findViewById(R.id.detailList);
+
+        detailAdapter = new DetailAdapter(this, listDetail);
+        listView.setAdapter(new DetailAdapter(this, listDetail));
 
 
 
