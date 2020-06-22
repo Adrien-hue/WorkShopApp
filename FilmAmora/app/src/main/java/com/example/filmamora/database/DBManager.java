@@ -107,7 +107,7 @@ public class DBManager {
 
     public ArrayList<Realisateur> getAllRealisateur() {
         ArrayList<Realisateur> results = new ArrayList<>();
-        String sqlQuery = "SELECT p.id, per.nom, per.prenom FROM Personne per JOIN Participe p ON per.id = p.id WHERE p.id_Role == 2;";
+        String sqlQuery = "SELECT DISTINCT per.id, per.prenom, per.nom FROM Personne per JOIN Participe p ON per.id = p.id WHERE p.id_Role == 2;";
         //Log.d(TAG, sqlQuery);
 
         //Get database

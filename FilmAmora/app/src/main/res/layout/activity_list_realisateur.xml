@@ -11,7 +11,11 @@
         android:id="@+id/layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorNoirGris">
+        android:background="@color/colorNoirGris"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!--METTRE TOUT LE MENU ICI OU AUTRE POUR ETRE AU DESSUS DE LA LISTE
                                 en dessous de ça -->
@@ -20,9 +24,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/logo"
                     android:layout_width="160dp"
@@ -35,20 +41,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
+                    android:fontFamily="@font/sriracha"
                     android:text="@string/titreDuSite"
                     android:textColor="@color/colorWhite"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/sriracha"/>
+                    android:textStyle="bold" />
             </LinearLayout>
+
             <include
                 layout="@layout/activity_navbar"
-                android:layout_below="@+id/text"
+                android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_width="fill_parent">
-            </include>
+                android:layout_below="@+id/text"></include>
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/layout_list"
             android:layout_width="match_parent"
@@ -59,8 +66,7 @@
                 android:id="@+id/ListRealisateur"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPurple"
-                />
+                android:background="@color/colorPurple" />
         </LinearLayout>
     </RelativeLayout>
 
