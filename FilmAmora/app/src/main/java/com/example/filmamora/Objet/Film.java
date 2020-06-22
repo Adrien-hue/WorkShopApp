@@ -34,8 +34,9 @@ public class Film{
         this.id = id;
         this.titre = titre;
         this.annee = annee;
-        this.p_nom = p_nom;
         this.p_prenom = p_prenom;
+        this.p_nom = p_nom;
+        this.aVoir = aVoir;
     }
 
     public Film(int id, String titre, Long annee, String synopsis, int aVoir, int note, String critique) {

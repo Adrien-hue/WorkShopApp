@@ -43,6 +43,7 @@
             android:id="@+id/item_nom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
             android:layout_below="@+id/item_name"
             android:text="nom"
             android:fontFamily="@font/sriracha"
