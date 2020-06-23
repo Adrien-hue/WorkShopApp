@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detail_film">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/activity_navback"
+            android:layout_below="@+id/text"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent">
+        </include>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/menu"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_below="@+id/navback"
+                android:background="@color/colorPurple"
+                >
+                <TextView
+                    android:id="@+id/item_TitreFilm"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/niconne"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+
+                    android:text="Titre">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/item_Date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:layout_gravity="center"
+                    android:text="Date"
+                    android:fontFamily="@font/sriracha">
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+                    <TextView
+                        android:id="@+id/item_RealisateurPrenom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:fontFamily="@font/sriracha"
+                        android:text="Realisateur Prenom"
+                        android:textAlignment="center"
+                        android:layout_gravity="center"></TextView>
+                    <TextView
+                        android:id="@+id/item_RealisateurNom"
+                        android:layout_marginLeft="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:fontFamily="@font/sriracha"
+                        android:text="Realisateur Nom"
+                        android:textAlignment="center"
+                        android:layout_gravity="center"></TextView>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/item_imageId"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/item_1"></ImageView>
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:textSize="25dp"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Synopsis"
+                    android:fontFamily="@font/niconne"
+                    android:textColor="@color/colorWhite"
+                    ></TextView>
+
+                <TextView
+                    android:id="@+id/item_synopsis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/sourcespb"
+                    android:text="Synopsis"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"></TextView>
+
+                <TextView
+                    android:id="@+id/distri"
+                    android:textSize="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/niconne"
+                    android:text="Distribution"></TextView>
+
+
+
+                <ListView
+                    android:id="@+id/distribution"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:nestedScrollingEnabled="true"
+                    >
+                </ListView>
+
+
+                <TextView
+                    android:id="@+id/note"
+                    android:textSize="25dp"
+                    android:layout_below="@id/distribution"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/niconne"
+                    android:text="Note"></TextView>
+
+                <TextView
+                    android:id="@+id/item_note"
+                    android:layout_marginTop="20dp"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="note"
+                    android:fontFamily="@font/sriracha"
+                    android:textColor="@color/colorWhite"
+                    ></TextView>
+
+                <TextView
+                    android:id="@+id/critique"
+                    android:textSize="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/niconne"
+                    android:text="Critique"></TextView>
+
+                <TextView
+                    android:id="@+id/item_critique"
+                    android:layout_marginTop="20dp"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="note"
+                    android:fontFamily="@font/sriracha"
+                    android:textColor="@color/colorWhite"
+                    ></TextView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

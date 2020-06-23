@@ -1,5 +1,5 @@
 package com.example.filmamora.Objet;
 
 public enum ProprieteFilm {
-    NAME, INFO, DATE, ID
+    ID, TITRE, ANNEE, SYNOPSIS, AVOIR, NOTE, CRITIQUE, ACTEURS
 }

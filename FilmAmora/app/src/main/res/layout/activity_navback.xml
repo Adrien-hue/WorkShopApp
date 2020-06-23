@@ -6,19 +6,35 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorNoirGris">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <LinearLayout
             android:id="@+id/navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/colorNoirGris">
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
             <ImageView
                 android:id="@+id/logo"
-                android:layout_gravity="center"
                 android:layout_width="160dp"
                 android:layout_height="125dp"
+                android:layout_marginLeft="20dp"
                 android:src="@drawable/logo_filmamora" />
+
+            <ImageView
+                android:id="@+id/bouton"
+                android:layout_width="64px"
+                android:layout_height="64px"
+                android:onClick="add"
+                android:src="@drawable/pojnts"></ImageView>
+        </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -33,6 +49,7 @@
                 android:fontFamily="@font/sriracha"
                 android:layout_gravity="center"
                 android:textColor="@color/colorWhite"></TextView>
+
         </LinearLayout>
     </LinearLayout>
 

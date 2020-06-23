@@ -10,26 +10,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.filmamora.Adapter.FilmAdapter;
-import com.example.filmamora.DetailsFilm.Interstellar;
-import com.example.filmamora.DetailsFilm.ReadyPlayerOne;
-import com.example.filmamora.DetailsFilm.Valerian;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.Objet.FilmComparator;
 import com.example.filmamora.Objet.ProprieteFilm;
+import com.example.filmamora.database.DBManager;
 
-import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,12 +29,18 @@ public class MainActivity extends AppCompatActivity {
     private Button triAnnee;
     private Button triTitre;
     private TextView linkFilm;
-    private FilmAdapter FilmAdapter;
+    private FilmAdapter filmAdapter;
+    private DBManager c3po;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Create db manager
+        c3po = new DBManager(this);
+
 
         this.linkFilm = findViewById(R.id.filmLink);
         linkFilm.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
@@ -50,24 +48,23 @@ public class MainActivity extends AppCompatActivity {
         this.triTitre = findViewById(R.id.btnTri1);
 
         //List des items
-        this.listFilm = new ArrayList<Film>();
-        listFilm.add(new Film("Interstellar", 1, "Par Christopher Nolan" , (long) 2014));
-        listFilm.add(new Film("Ready Player One", 2,"Par Steven Spielberg" , (long) 2018));
-        listFilm.add(new Film("Valérian et la cité des mille planètes",3,"Par Luc Besson", (long) 2017));
-        listFilm.add(new Film("Matrix",4,"Par les Wachowski", (long) 1999));
-        listFilm.add(new Film("Her",16,"Par Spike Jonze", (long) 2013));
-        listFilm.add(new Film("TEST",14,"Par Spike Jonze", (long) 2019));
+       this.listFilm = c3po.getAllFilm();
 
-        final ListView listView = findViewById(R.id.ListFilm);
-        FilmAdapter = new FilmAdapter(this, listFilm);
-        listView.setAdapter(new FilmAdapter(this, listFilm));
+        listView = findViewById(R.id.ListFilm);
+
+        filmAdapter = new FilmAdapter(this, listFilm);
+
+
+
+        listView.setAdapter(filmAdapter);
 
         triAnnee.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
-                listFilm.sort(new FilmComparator(ProprieteFilm.DATE));
-                FilmAdapter.update(listFilm);
+                Log.d("onClickAnnee", "clickAnnee");
+                listFilm.sort(new FilmComparator(ProprieteFilm.ANNEE));
+                filmAdapter.update(listFilm);
             }
         });
 
@@ -75,8 +72,9 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
-                listFilm.sort(new FilmComparator(ProprieteFilm.NAME));
-                FilmAdapter.update(listFilm);
+                Log.d("onClickTitre", "clickTitre");
+                listFilm.sort(new FilmComparator(ProprieteFilm.TITRE));
+                filmAdapter.update(listFilm);
             }
         });
 
@@ -86,29 +84,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                long film = listView.getItemIdAtPosition(position);
-                Log.d("mainActivity", ""+ film);
+                long idFilm = listView.getItemIdAtPosition(position);
+                Log.d("mainActivity", ""+ idFilm);
 
-                switch ((int) film){
-                    case 1:
-                        Intent interstellar = new Intent(getApplicationContext(), Interstellar.class);
-                        startActivity(interstellar);
-                        finish();
-                        break;
+                Intent detailFilms = new Intent(getApplicationContext(), detail_film.class);
+                Bundle extras = new Bundle();
+                extras.putString("idFilm", idFilm + "");
+                detailFilms.putExtras(extras);
+                startActivity(detailFilms);
+                finish();
 
-                    case 2:
-                        Intent Steven = new Intent(getApplicationContext(), ReadyPlayerOne.class);
-                        startActivity(Steven);
-                        finish();
-                        break;
-                    case 3:
-                        Intent valerian = new Intent(getApplicationContext(), Valerian.class);
-                        startActivity(valerian);
-                        finish();
-                    default:
-                        break;
             }
-            }
+
         });
     }
 

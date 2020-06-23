@@ -1,6 +1,7 @@
 package com.example.filmamora.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.example.filmamora.Objet.Film;
 import com.example.filmamora.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FilmAdapter extends BaseAdapter {
@@ -20,13 +22,17 @@ public class FilmAdapter extends BaseAdapter {
     private Context context;
     private List<Film> filmList;
     private LayoutInflater inflater;
+    private static final String TAG = "filmAdapter";
+
+
 
     //Constructeur
     public FilmAdapter(Context context, List<Film> filmList) {
+        this.filmList = new ArrayList<>();
         this.context = context;
-        this.filmList = filmList;
+        this.filmList.addAll(filmList);
+        Log.d(TAG, "Création Adapter");
         this.inflater = LayoutInflater.from(context);
-
     }
 
     @Override
@@ -46,12 +52,16 @@ public class FilmAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view =inflater.inflate(R.layout.adapter_list, null);
+        view = inflater.inflate(R.layout.adapter_list, null);
+
+
 
         Film currentItem = (Film) getItem(i);
-        String itemName = currentItem.getName();
-        Long itemDate = currentItem.getDate();
-        String itemInfo = currentItem.getInfo();
+
+        String itemName = currentItem.getTitre();
+        Long itemDate = currentItem.getAnnee();
+        String prenom = currentItem.getP_prenom();
+        String nom = currentItem.getP_nom();
         int id = currentItem.getId();
 
         TextView itemNameView = view.findViewById(R.id.item_name);
@@ -63,8 +73,13 @@ public class FilmAdapter extends BaseAdapter {
         int resId = context.getResources().getIdentifier(ressourceName, "drawable", context.getPackageName());
         itemImageView.setImageResource(resId);
 
-        TextView itemInfoView = view.findViewById(R.id.item_info);
-        itemInfoView.setText(itemInfo);
+
+        TextView itemPrenom = view.findViewById(R.id.item_prenom);
+        itemPrenom.setText(prenom);
+
+
+        TextView itemNom = view.findViewById(R.id.item_nom);
+        itemNom.setText(nom);
 
         TextView itemDateView = view.findViewById(R.id.item_date);
         itemDateView.setText("Sorti en " + itemDate);
@@ -73,7 +88,8 @@ public class FilmAdapter extends BaseAdapter {
     }
 
     public void update(List<Film> filmList){
-        this.filmList = filmList;
+        this.filmList.clear();
+        this.filmList.addAll(filmList);
         this.notifyDataSetChanged();
     }
 }

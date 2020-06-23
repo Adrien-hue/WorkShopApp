@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/les_films"
-        android:onClick="goBackFilm"
+        android:onClick="listFilm"
         android:layout_weight="1"
         android:textColor="@color/colorWhite"
         android:fontFamily="@font/sriracha"
@@ -42,11 +42,12 @@
         android:layout_marginRight="2dp"/>
 
     <TextView
+        android:id="@+id/filmavoir"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:fontFamily="@font/sriracha"
-        android:linksClickable="false"
+        android:onClick="filmAvoir"
         android:text="@string/film_a_voir"
         android:textColor="@color/colorWhite"
         android:background="@drawable/border"
